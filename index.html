@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+<head>
+  <title>اسئلة ثقافية</title>
+ 
+  
+    <style>
+  body {
+   direction: rtl;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  h1 {
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+  color: #44547e	;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 35px;
+  margin: 20px;
+  padding: 10px;
+   text-align: center;
+   color: #44547e	;
+   margin-bottom: 1%;
+
+
+}
+  .button {
+    display: table-cell;
+    padding: 13px 20px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    color: #44547e	;
+    background-color:	#d7eceb;
+    border: solid;
+    border-width:2px;
+    border-radius: 1px;
+    margin: 0px;
+    width: 15%;
+    box-sizing: border-box;
+    margin-left: auto;
+  margin-right: auto;
+    
+  }
+  .button-clicked {
+  background-color: #bbe1a8;
+  color: #7585c1;}
+
+  #button-container {
+        text-align: center;
+
+  
+  }
+
+  /* Responsive styles 
+  @media screen and (max-width: 600px) {
+    .button {
+      display: block;
+      width: 100%;
+    }
+  }*/
+</style>
+
+  
+  
+  
+  
+</head>
+<body>
+  <h1>اسئلة ثقافية</h1>
+  <div id="question-container">
+    <h2 id="question"> اضغط على الحرف ليظهر السؤال<br></h2>
+  </div>
+  <div id="button-container">
+    <button class="button" onclick="getRandomQuestion('A')"data-letter="A">أ</button>
+    <button class="button" onclick="getRandomQuestion('B')"data-letter="B">ب</button>
+    <button class="button" onclick="getRandomQuestion('C')"data-letter="C">ت</button>
+    <button class="button" onclick="getRandomQuestion('D')"data-letter="D">ث</button>
+    <button class="button" onclick="getRandomQuestion('E')"data-letter="E">ج</button>
+    <button class="button" onclick="getRandomQuestion('F')"data-letter="F">ح</button>
+    <button class="button" onclick="getRandomQuestion('G')"data-letter="G">خ</button>
+    <button class="button" onclick="getRandomQuestion('H')"data-letter="H">د</button>
+    <button class="button" onclick="getRandomQuestion('I')"data-letter="I">ذ</button>
+    <button class="button" onclick="getRandomQuestion('J')"data-letter="J">ر</button>
+    <button class="button" onclick="getRandomQuestion('K')"data-letter="K">ز</button>
+    <button class="button" onclick="getRandomQuestion('L')"data-letter="L">س</button>
+    <button class="button" onclick="getRandomQuestion('M')"data-letter="M">ش</button>
+    <button class="button" onclick="getRandomQuestion('N')"data-letter="N">ص</button>
+    <button class="button" onclick="getRandomQuestion('O')"data-letter="O">ض</button>
+    <button class="button" onclick="getRandomQuestion('P')"data-letter="P">ط</button>
+    <button class="button" onclick="getRandomQuestion('Q')"data-letter="Q">ظ</button>
+    <button class="button" onclick="getRandomQuestion('R')"data-letter="R">ع</button>
+    <button class="button" onclick="getRandomQuestion('S')"data-letter="S">غ</button>
+    <button class="button" onclick="getRandomQuestion('T')"data-letter="T">ف</button>
+    <button class="button" onclick="getRandomQuestion('U')"data-letter="U">ق</button>
+    <button class="button" onclick="getRandomQuestion('V')"data-letter="V">ك</button>
+    <button class="button" onclick="getRandomQuestion('W')"data-letter="W">ل</button>
+    <button class="button" onclick="getRandomQuestion('X')"data-letter="X">م</button>
+    <button class="button" onclick="getRandomQuestion('Y')"data-letter="Y">ن</button>
+    <button class="button" onclick="getRandomQuestion('Z')"data-letter="Z">ه</button>
+    <button class="button" onclick="getRandomQuestion('A2')"data-letter="A2">و</button>
+    <button class="button" onclick="getRandomQuestion('B2')"data-letter="B2">ي</button>
+    <button class="button" onclick="getRandomQuestion('C2')"data-letter="C2">بدون حرف</button>
+    <button class="button" onclick="getRandomQuestion('D2')"data-letter="D2">--</button>
+
+    
+  </div>
+
+  <script>
+
+    
+    var questions = {
+      // حرف أ
+      A: [  
+'<span style="color: #7585c1;">اين يوجد اكبر عدد من البراكين في العالم؟</span><br><span style="color:#ffb01a;">إندونيسيا</span>',
+'<span style="color: #7585c1;">من هو امير الشعراء؟</span><br><span style="color:#ffb01a;">أحمد شوقي</span>',
+'<span style="color: #7585c1;">بيكاسو رسام مشهور فما هي جنسيته؟</span><br><span style="color:#ffb01a;">إسباني</span>',
+'<span style="color: #7585c1;">توجد عبارة plvs vltra على علم إحدى الدول الأوروبية فما هي؟</span><br><span style="color:#ffb01a;">إسبانيا</span>',
+'<span style="color: #7585c1;">ماهو اقل الأعضاء عظاما؟</span><br><span style="color:#ffb01a;">الأذن</span>',
+'<span style="color: #7585c1;">يطلق على الفشل وعدم الوصول إلى الهدف المطلوب؟</span><br><span style="color:#ffb01a;">الإخفاق</span>',
+'<span style="color: #7585c1;">من هي أخر من ماتت من زوجات النبي ﷺ؟</span><br><span style="color:#ffb01a;">أم سلمة</span>',
+'<span style="color: #7585c1;">أصداف وعظام وآثار الحيوانات وخطوط وشكل الأوراق وأي آثار محفوظة من حياة ما قبل التاريخ فما هي؟</span><br><span style="color:#ffb01a;">الأحافير</span>',
+'<span style="color: #7585c1;">سورة في القرآن يطلق عليها اسم "اخت الطويلتين"؟</span><br><span style="color:#ffb01a;">الأعراف</span>',
+'<span style="color: #7585c1;">من هو الرجل الوحيد الذي كنيَ في القرآن؟</span><br><span style="color:#ffb01a;">أبو لهب</span>',
+'<span style="color: #7585c1;">اكمل المثل "قال متى بنى القصر قال"؟</span><br><span style="color:#ffb01a;">أمس العصر</span>',
+'<span style="color: #7585c1;">من أسماء يوم القيامة؟</span><br><span style="color:#ffb01a;">الأزفة</span>',
+'<span style="color: #7585c1;">ما القارة التي يعيش فيها الكنغر بكثرة؟</span><br><span style="color:#ffb01a;">أستراليا</span>',
+'<span style="color: #7585c1;">اسم السورة المدنية الوحيدة في جزء تبارك؟</span><br><span style="color:#ffb01a;">الإنسان</span>',
+'<span style="color: #7585c1;">عضو ينقي الهواء ويدفئه قبل الوصول للرئتين؟</span><br><span style="color:#ffb01a;">الأنف</span>',
+'<span style="color: #7585c1;">اكمل "مالقوا في الورد عيب قالو .."؟</span><br><span style="color:#ffb01a;">أحمر الخدين</span>',
+'<span style="color: #7585c1;">من أول من أمر بجمع القرآن الكريم وترتيبه؟</span><br><span style="color:#ffb01a;">أبو بكر الصديق</span>',
+'<span style="color: #7585c1;">البعد عن الأهل والوطن يسمى؟</span><br><span style="color:#ffb01a;">الاغتراب</span>',
+'<span style="color: #7585c1;">جذب أحد الطرفين لصاحبه نحو الموافقة على نقطة معينة أو فكرة أو هدف؟</span><br><span style="color:#ffb01a;">الإقناع</span>',
+'<span style="color: #7585c1;">ماذا يسمى خط التقاء سطح الأرض الظاهر مع السماء؟</span><br><span style="color:#ffb01a;">الأفق</span>',
+'<span style="color: #7585c1;">أجزاء حيوية وعضوية في داخل جسم الإنسان من أمعاء ومعدة وغيرها في البطن ماذا تسمى؟</span><br><span style="color:#ffb01a;">الأحشاء</span>',
+'<span style="color: #7585c1;">التحول من مادة صلبة إلى سائلة؟</span><br><span style="color:#ffb01a;">الانصهار</span>',
+'<span style="color: #7585c1;">ثمرة بشكل الكمثرى لونها أخضر أرجواني، البلد الرئيسي المنتج لها المكسيك؟</span><br><span style="color:#ffb01a;">الافوكادو</span>',
+'<span style="color: #7585c1;">الاسم العربي القديم الذي يطلق على إسبانيا؟</span><br><span style="color:#ffb01a;">الأندلس</span>',
+'<span style="color: #7585c1;">نبي قبضت روحه في السماء الرابعة؟</span><br><span style="color:#ffb01a;">إدريس عليه السلام</span>',
+'<span style="color: #7585c1;">هو الصحابي عبد الرحمن بن صخر اسلم عام ٧ وهو اكثر الصحابة رواية بالحديث؟</span><br><span style="color:#ffb01a;">أبو هريرة رضي الله عنه</span>',
+'<span style="color: #7585c1;">لقب اطلق على سيد الشهداء حمزة بن عبد المطلب؟</span><br><span style="color:#ffb01a;">أسد الله</span>',
+'<span style="color: #7585c1;">ما هو الحيوان الذي يشم من لسانه؟</span><br><span style="color:#ffb01a;">الأفعى</span>',
+'<span style="color: #7585c1;">حملت الشاعرة الخنساء هذا اللقب بسبب شكل؟</span><br><span style="color:#ffb01a;">أنفها</span>',
+'<span style="color: #7585c1;">اسم نصفه سام؟</span><br><span style="color:#ffb01a;">ابتسام</span>',
+'<span style="color: #7585c1;">ما هو اسم الحجر الذي يستخرج منه كحل العين؟</span><br><span style="color:#ffb01a;">الأثمد</span>',
+'<span style="color: #7585c1;">ما السورة التي ختمت باسم نبيين؟</span><br><span style="color:#ffb01a;">الأعلى</span>',
+'<span style="color: #7585c1;">ماهي القارة الوحيدة التي يمر بها خط الاستواء ومداري الجدي والسرطان؟</span><br><span style="color:#ffb01a;">أفريقيا</span>',
+'<span style="color: #7585c1;">فاكهة تسمى تفاح الصنوبر، ربع إنتاج العالم من تايلاند فما هي؟</span><br><span style="color:#ffb01a;">أناناس</span>',
+'<span style="color: #7585c1;">من أين ينبع نهر النيل؟</span><br><span style="color:#ffb01a;">أوغندا</span>',
+'<span style="color: #7585c1;">كنية لآدم - عليه السلام -؟</span><br><span style="color:#ffb01a;">أبو البشر</span>',
+'<span style="color: #7585c1;">وحدة لقياس شدة التيار الكهربائي؟</span><br><span style="color:#ffb01a;">أمبير</span>',
+'<span style="color: #7585c1;">هو سابع من أسلم كانت داره تسمى دار الإسلام شهدت داره إسلام عمر بن الخطاب فمن هو؟</span><br><span style="color:#ffb01a;">أرقم بن أبي الأرقم</span>',
+'<span style="color: #7585c1;">ماذا يطلق على المرأة التي لا زوج لها والرجل الذي لا زوجة لها؟</span><br><span style="color:#ffb01a;">الأيم</span>',
+'<span style="color: #7585c1;">من أشهر مؤلفات الإمام الشافعي الذي نبغ في الحديث والفقه والأدب؟</span><br><span style="color:#ffb01a;">الأم</span>',
+'<span style="color: #7585c1;">من أجمل مدن المملكة مناخًا تشتهر بالمنتجات الزراعية؟</span><br><span style="color:#ffb01a;">أبها</span>',
+'<span style="color: #7585c1;">شركة النفط العملاقة التي امتلكتها المملكة بالكامل عام ١٤٠٠ بالهجرة؟</span><br><span style="color:#ffb01a;">أرامكو</span>',
+'<span style="color: #7585c1;">علم يعنى بدراسة انتاج السلع والخدمات وتوزيعها واستخدامها؟</span><br><span style="color:#ffb01a;">اقتصاد</span>',
+'<span style="color: #7585c1;">سورة من القرآن تخلو تمامًا من حرف الراء؟</span><br><span style="color:#ffb01a;">الإخلاص</span>',
+'<span style="color: #7585c1;">أين ماتت أم الرسول ﷺ؟</span><br><span style="color:#ffb01a;">الأبواء</span>',
+'<span style="color: #7585c1;">ما هي السورة التي ذكر فيها لفظ الجلالة مرتين متتاليتين؟</span><br><span style="color:#ffb01a;">سورة الأنعام</span>',
+'<span style="color: #7585c1;">لغة نشأت في الهند من اندماج اللغة العربية والهندية؟</span><br><span style="color:#ffb01a;">أوردو</span>',
+'<span style="color: #7585c1;">ما اسم الصحابي الذي نزل الرسول ﷺ ضيفًا في بيته عندما هاجر للمدينة؟</span><br><span style="color:#ffb01a;">أبو أيوب الأنصاري</span>',
+'<span style="color: #7585c1;"> ما هي الغزوة التي استشهد فيها عمّ النبيّ حمزة رضي الله عنه؟</span><br><span style="color:#ffb01a;">احد</span>',
+'<span style="color: #7585c1;">قال الله تعالى "كأنهم حمر مستنفرة فرت من قسورة" فما هو حيوان القسورة؟</span><br><span style="color:#ffb01a;">الأسد</span>',
+'<span style="color: #7585c1;">الشمطاء في اللغة هي من غلب الشيب رأسها فماذا يطلق على الرجل الذي غلب الشيب راسة ؟</span><br><span style="color:#ffb01a;">اشمط</span>',
+'<span style="color: #7585c1;">ماهي اول غزوة للرسول ؟</span><br><span style="color:#ffb01a;">الأبواء(ودان)</span>',
+'<span style="color: #7585c1;">ماهي معجزة النبي داوود عليه السلام ؟</span><br><span style="color:#ffb01a;">الان له االحديد </span>',
+'<span style="color: #7585c1;">من هما النبيين اللذان ذكرا في الآية الموجودة في نهاية سورة الأعلى؟</span><br><span style="color:#ffb01a;">إبراهيم وموسى</span>',
+'<span style="color: #7585c1;">ما هو عدد الكواكب الصخرية في المجموعة الشمسية؟</span><br><span style="color:#ffb01a;">أربعة كواكب</span>',
+'<span style="color: #7585c1;">ما هي القارة التي يقع فيها جبل إيفرست؟</span><br><span style="color:#ffb01a;">اسيا</span>',
+'<span style="color: #7585c1;">ماهي اول سورة في الجزء الخامس عشر ؟</span><br><span style="color:#ffb01a;">الإسراء</span>',
+'<span style="color: #7585c1;">ما يطلق على الريح الطيب؟</span><br><span style="color:#ffb01a;">أريج</span>'
+      ],
+      // حرف ب
+
+      B: [
+ '<span style="color: #7585c1;">ما الحيوان المسبب لمقتل العدد الأكبر في البشرية؟</span><br><span style="color:#ffb01a;">البعوض</span>',
+'<span style="color: #7585c1;">أي من قبائل اليهود أرادوا إلقاء الحجر على النبي ﷺ؟</span><br><span style="color:#ffb01a;">بنو النضير</span>',
+'<span style="color: #7585c1;">ما هي جنسية اللاعب كرستيانو رونالدو؟</span><br><span style="color:#ffb01a;">برتغالي</span>',
+'<span style="color: #7585c1;">من أي بلد أصل نبتة الكاجو؟</span><br><span style="color:#ffb01a;">البرازيل</span>',
+'<span style="color: #7585c1;">ورقة من أوراق الزهر؟</span><br><span style="color:#ffb01a;">بتلة</span>',
+'<span style="color: #7585c1;">أول الدولة العربية التي استخرجت اللؤلؤ الطبيعي؟</span><br><span style="color:#ffb01a;">البحرين</span>',
+'<span style="color: #7585c1;">ما يطلق على الأصابع وأطرافها؟</span><br><span style="color:#ffb01a;">بنان</span>',
+'<span style="color: #7585c1;">مادة أساسية مغذية في البيض؟</span><br><span style="color:#ffb01a;">بروتين</span>',
+'<span style="color: #7585c1;">الحياة الغيبية بين الدنيا والآخرة؟</span><br><span style="color:#ffb01a;">برزخ</span>',
+'<span style="color: #7585c1;">امتزاج اللون الأحمر والأزرق؟</span><br><span style="color:#ffb01a;">بنفسجي</span>',
+'<span style="color: #7585c1;">ماذا يطلق على صلاة الفجر والعصر؟</span><br><span style="color:#ffb01a;">البردين</span>',
+'<span style="color: #7585c1;">أبعد الكواكب عن الشمس؟</span><br><span style="color:#ffb01a;">بلوتو</span>',
+'<span style="color: #7585c1;">عاصمة لبنان؟</span><br><span style="color:#ffb01a;">بيروت</span>',
+'<span style="color: #7585c1;">يطلق على الولد الأول؟</span><br><span style="color:#ffb01a;">بكر</span>',
+'<span style="color: #7585c1;">سنام القرآن؟</span><br><span style="color:#ffb01a;">البقرة</span>',
+'<span style="color: #7585c1;">حيوان ينتج عن تزاوج الفرس مع الحمار؟</span><br><span style="color:#ffb01a;">بغل</span>',
+'<span style="color: #7585c1;">حشرة تنقل الحمى الصفراء؟</span><br><span style="color:#ffb01a;">بعوضة</span>',
+'<span style="color: #7585c1;">اله يعرف بها الاتجاهات؟</span><br><span style="color:#ffb01a;">بوصلة</span>',
+'<span style="color: #7585c1;">غدة طويلة مسطحة تقع خلف المعدة في الجزء العلوي من البطن؟</span><br><span style="color:#ffb01a;">بنكرياس</span>',
+'<span style="color: #7585c1;">في عملة عُمان، ما اسم جزء الريال؟</span><br><span style="color:#ffb01a;">بيزة</span>',
+'<span style="color: #7585c1;">ماهي محادثات الأمور كما ورد في الحديث؟</span><br><span style="color:#ffb01a;">بدع</span>',
+'<span style="color: #7585c1;">مدينة في العراق ورد ذكرها في القرآن؟</span><br><span style="color:#ffb01a;">بابل</span>',
+'<span style="color: #7585c1;">يعيش في الماء وعلى اليابسة؟</span><br><span style="color:#ffb01a;">برمائي</span>',
+'<span style="color: #7585c1;">طائر يستطيع تحريك فكي منقاره الأعلى والأسفل في نفس الوقت؟</span><br><span style="color:#ffb01a;">ببغاء</span>',
+'<span style="color: #7585c1;">اكمل المثل "على نفسها جنت ...؟</span><br><span style="color:#ffb01a;">براقش</span>',
+'<span style="color: #7585c1;">اكمل "ما اشبه الليلة بال...؟</span><br><span style="color:#ffb01a;">بالبارحة</span>',
+'<span style="color: #7585c1;">ما اسم اول عملة رقمية؟</span><br><span style="color:#ffb01a;">بيتكوين </span>',
+'<span style="color: #7585c1;">من اخوات كان ترفع المبتدأ وتنصب الخبر؟</span><br><span style="color:#ffb01a;">بات</span>',
+'<span style="color: #7585c1;">عالم مسلم هو أول من اكتشف أن سرعة الضوء أكبر من سرعة الصوت؟</span><br><span style="color:#ffb01a;">بيروني</span>',
+'<span style="color: #7585c1;">الحرب التي حدثت في الجاهلية واستمرت قرابة الأربعين عامًا وقد وقعت بين قبيلتي بكر وتغلب؟</span><br><span style="color:#ffb01a;">البسوس</span>',
+'<span style="color: #7585c1;">مقياس أو وحدة طول تساوي جزءً واحدًا من اثني عشر جزءً من القدم؟</span><br><span style="color:#ffb01a;">بوصة</span>',
+'<span style="color: #7585c1;">دولة في أمريكا اللاتينية هي الدولة الوحيدة التي تتكلم البرتغالية؟</span><br><span style="color:#ffb01a;">البرازيل</span>',
+'<span style="color: #7585c1;">في القرآن الكريم ذكر لفظ الزمهرير فما معناه؟</span><br><span style="color:#ffb01a;">البرد الشديد</span>',
+'<span style="color: #7585c1;">لقب القصيدة التي أنشدها كعب بن زهير للنبي ﷺ حينما جاء يبايعه على الإسلام مطلعها بانت سعاد؟</span><br><span style="color:#ffb01a;">البردة</span>',
+'<span style="color: #7585c1;">هو الطلاق النهائي الذي لا يجوز للرجل أن يراجع زوجته بإرادته؟</span><br><span style="color:#ffb01a;">البائن</span>',
+'<span style="color: #7585c1;">ليلة الإسراء امتطى النبي محمد ﷺ دابة فما اسمه؟</span><br><span style="color:#ffb01a;">البراق</span>',
+'<span style="color: #7585c1;">من أول من نقض العهد مع الرسول صلى الله عليه وسلم من القبائل اليهودية؟</span><br><span style="color:#ffb01a;">بنو قينقاع</span>',
+'<span style="color: #7585c1;">آفة من آفات المجتمع ومعناها عدم توفر العمل للراغب فيه؟</span><br><span style="color:#ffb01a;">بطالة</span>',
+'<span style="color: #7585c1;">في اي سورة ذكر شهر رمضان في القران؟</span><br><span style="color:#ffb01a;">البقرة</span>',
+'<span style="color: #7585c1;">قالت العرب "من اطاع هواه باع دينه .."؟</span><br><span style="color:#ffb01a;">بدنياه</span>',
+'<span style="color: #7585c1;">يقوم رجل بالتشهد 4 مرات في صلاة واحدة وصلاته تعتبر صحيحة،    فكيف ذلك ؟</span><br><span style="color:#ffb01a;">بدأ صلاة المغرب مع تشهد الركعة الثانية</span>',
+'<span style="color: #7585c1;">أول ما ينمو من زهر الشجر؟</span><br><span style="color:#ffb01a;">براعم</span>'
+    ],
+          // حرف ت
+
+    C: [
+ '<span style="color: #7585c1;">خير الزاد ؟</span><br><span style="color:#ffb01a;">التقوى</span>',
+'<span style="color: #7585c1;">سورة على اسم فاكهة؟</span><br><span style="color:#ffb01a;">تين</span>',
+'<span style="color: #7585c1;">اخر غزوات الرسول ﷺ ؟</span><br><span style="color:#ffb01a;">تبوك</span>',
+'<span style="color: #7585c1;">لقب عبدالله بن عباس رضي الله عنه ؟</span><br><span style="color:#ffb01a;">ترجمان القران</span>',
+'<span style="color: #7585c1;">اسم لعين شرابها من اطيب شراب اهل الجنة ؟</span><br><span style="color:#ffb01a;">تنسيم</span>',
+'<span style="color: #7585c1;">ماهو تاج المروءة؟</span><br><span style="color:#ffb01a;">تواضع</span>',
+'<span style="color: #7585c1;">ظاهرة طبيعية تتفكك فيه التربه والصخور من سطح الارض في منطقة معينه وتنتقل الى منطقة اخرى ؟</span><br><span style="color:#ffb01a;">تعرية</span>',
+'<span style="color: #7585c1;">البلد العربي الذى كان يسمى افريقيا ؟</span><br><span style="color:#ffb01a;">تونس</span>',
+'<span style="color: #7585c1;">اسرع المخلوقات البحرية ؟</span><br><span style="color:#ffb01a;">تونة</span>',
+'<span style="color: #7585c1;">ما العظم الذي يربط الكتف بعظمة القفص الصدري ؟</span><br><span style="color:#ffb01a;">ترقوة</span>',
+'<span style="color: #7585c1;">حيوان لا يمكنه اخراج لسانه من فمه ؟</span><br><span style="color:#ffb01a;">تمساح</span>',
+'<span style="color: #7585c1;">مبنى يستخدم في تسوية الخبز ؟</span><br><span style="color:#ffb01a;">تنور</span>',
+'<span style="color: #7585c1;">شجرة اقسم بها الله في القران ؟</span><br><span style="color:#ffb01a;">تين</span>',
+'<span style="color: #7585c1;">ماذا يسمى الذهب الخام الذي لم يضرب ؟</span><br><span style="color:#ffb01a;">تبر</span>',
+'<span style="color: #7585c1;">مليون المليون هو ؟</span><br><span style="color:#ffb01a;">ترليون</span>',
+'<span style="color: #7585c1;">ماهو صوت الذئب عند الجوع ؟</span><br><span style="color:#ffb01a;">تضور وتلعلع</span>',
+'<span style="color: #7585c1;">اضطراب في النطق يقطع سير الكلمات ؟</span><br><span style="color:#ffb01a;">تأتأة</span>',
+'<span style="color: #7585c1;">سورة في القرآن تسمى البراءة ؟</span><br><span style="color:#ffb01a;">التوبة</span>',
+'<span style="color: #7585c1;">ما الذبابة التي تصيب مرض النوم؟</span><br><span style="color:#ffb01a;">تسي تسي</span>',
+'<span style="color: #7585c1;">نبات من الفصيلة الباذنجانية زراعته في الولايات المتحدة والصين والهند وتركيا وايطاليا تستخدم اوراقه في صناعة السجائر ؟</span><br><span style="color:#ffb01a;">التبغ</span>',
+'<span style="color: #7585c1;">نقل الكلام من لغة الى لغة أخرى؟</span><br><span style="color:#ffb01a;">ترجمة</span>',
+'<span style="color: #7585c1;">تأديب على ذنب لا حد فيه ولا كفارة؟</span><br><span style="color:#ffb01a;">تعزير</span>',
+'<span style="color: #7585c1;">آية من آيات الملك منحها الله سبحانه وتعالى لطالوت ؟</span><br><span style="color:#ffb01a;">تابوت</span>',
+'<span style="color: #7585c1;">مقبرة هندية مبنية من الرخام الأبيض تعتبر من عجائب الدنيا السبع ؟</span><br><span style="color:#ffb01a;">تاج محل</span>',
+'<span style="color: #7585c1;">الفاضحة والمبعثرة اسمان لسورة من القرآن ؟</span><br><span style="color:#ffb01a;">التوبة</span>',
+'<span style="color: #7585c1;">يقال للشمس والقمر قمران وللبائع والمشتري البيعان فماذا يطلق على هذا في اللغة ؟</span><br><span style="color:#ffb01a;">التغليب</span>',
+'<span style="color: #7585c1;">شرفها الرسول ﷺ في العام التاسع من الهجرة بالزيارة اذا بانت الغزوة التي عرفت بالعسرة ؟</span><br><span style="color:#ffb01a;">تبوك</span>',
+'<span style="color: #7585c1;">سياسة تتبعها الحكومات او الهيئات لمواجهة زيادة النفقات خصوصا عندما تشح الايرادات ؟</span><br><span style="color:#ffb01a;">تقشف</span>',
+'<span style="color: #7585c1;">ما نص عليه الشرع في بداية الصلاة ؟</span><br><span style="color:#ffb01a;">تكبيرة الاحرام</span>',
+'<span style="color: #7585c1;">عملية زخرفة القماش تتم بالابرة والخيط ؟</span><br><span style="color:#ffb01a;">تطريز</span>',
+'<span style="color: #7585c1;">هما ركعتان نصليهما اول دخولنا الى المسجد ؟</span><br><span style="color:#ffb01a;">تحية المسجد</span>',
+'<span style="color: #7585c1;">شجر يقتات دود القز على اوراقه ثمره حلو المذاق ؟</span><br><span style="color:#ffb01a;">التوت</span>',
+'<span style="color: #7585c1;">ما ارتفع من الارض ومادون الجبل ؟</span><br><span style="color:#ffb01a;">تل</span>',
+'<span style="color: #7585c1;">ما اسم السورة التي ورد فيها ذكر غزوة حنين؟</span><br><span style="color:#ffb01a;">توبة</span>',
+'<span style="color: #7585c1;"> كم عدد اصفار ثلاث مليارات ؟</span><br><span style="color:#ffb01a;">تسعة</span>',
+'<span style="color: #7585c1;">هو استبعاد كل صفة او تشبيه انساني للذات الالهية العظمي؟</span><br><span style="color:#ffb01a;">تنزيه</span>'
+    ],
+       // حرف ث
+    D: [
+'<span style="color: #7585c1;">( ولا يدخلون الجنة حتى يلج الجمل في سم الخياط )ما المراد بسم الخياط؟</span><br><span style="color:#ffb01a;">ثقب الابرة</span>',
+'<span style="color: #7585c1;">الامرأة التي سبق لها الزواج ؟</span><br><span style="color:#ffb01a;">ثيب</span>',
+'<span style="color: #7585c1;">مضاد طبيعي يستخدم في الطعام والدواء ؟</span><br><span style="color:#ffb01a;">ثوم</span>',
+'<span style="color: #7585c1;">مرادف فم ؟</span><br><span style="color:#ffb01a;">ثغر</span>',
+'<span style="color: #7585c1;">في اللغة بمعنى اهون عزمه وقلل من نشاطه؟</span><br><span style="color:#ffb01a;">ثبطه</span>',
+'<span style="color: #7585c1;">ما هو احب الطعام الى النبي ﷺ ؟</span><br><span style="color:#ffb01a;">ثريد</span>',
+'<span style="color: #7585c1;">التراب الرطب المبلل بالماء ؟</span><br><span style="color:#ffb01a;">ثرى</span>',
+'<span style="color: #7585c1;">كلمه تستطيع ان تقرأها من اليمين الى اليسار؟</span><br><span style="color:#ffb01a;">ثلث</span>',
+'<span style="color: #7585c1;">حيوان يطلق عليه ابو النوافل ؟</span><br><span style="color:#ffb01a;">ثعلب</span>',
+'<span style="color: #7585c1;">يطلق في اللغة على جماعة من الناس ؟</span><br><span style="color:#ffb01a;">ثلة</span>',
+'<span style="color: #7585c1;">الانسان كثير الكلام ؟</span><br><span style="color:#ffb01a;">ثرثار</span>',
+'<span style="color: #7585c1;">من اهم الخطوط العربية واصعبها يستخدم في كتابة اسماء الكتب والآيات القرآنية ؟</span><br><span style="color:#ffb01a;">الثلث</span>',
+'<span style="color: #7585c1;">تسمى الام التي فقدت ولدها او زوجها؟</span><br><span style="color:#ffb01a;">ثكلى</span>',
+'<span style="color: #7585c1;">ما هو الغاز الغير قابل للاحتراق ويذوب في الماء ؟</span><br><span style="color:#ffb01a;">ثاني اكسيد الكربون</span>',
+'<span style="color: #7585c1;">ما هو الحيوان الذي أبطل السحر؟</span><br><span style="color:#ffb01a;">ثعبان  </span>',
+'<span style="color: #7585c1;">من مرضعات الرسول ﷺ ؟</span><br><span style="color:#ffb01a;">ثويبية الاسلمية</span>',
+'<span style="color: #7585c1;">وصف ورد في القران الكريم يعني الانس والجن ؟</span><br><span style="color:#ffb01a;">الثقلان</span>',
+'<span style="color: #7585c1;">صحابي جليل بايع الرسول - صلى الله عليه وسلم - على أن لا يسأل الناس شيئاً ؟</span><br><span style="color:#ffb01a;">ثوبان رضي الله عنه</span>',
+'<span style="color: #7585c1;">من المظاهر الفلكية في الكون التي حيرت العلماء ؟</span><br><span style="color:#ffb01a;">الثقوب السوداء</span>',
+'<span style="color: #7585c1;">في اللغة بمعنى كريم الذي يستنفذ ماعنده من مال وغيره وايضا هو قَبيلَة من قبائل  الْعَرَب البائدة ؟</span><br><span style="color:#ffb01a;">ثمود</span>',
+'<span style="color: #7585c1;">مدة الحمل والفصال كما ذكرت في القران؟</span><br><span style="color:#ffb01a;">ثلاثون شهراً</span>',
+'<span style="color: #7585c1;">لفظ في القران المقصود به ابي بكر رضي الله عنه عندما كان في الغار مع الرسول ﷺ؟</span><br><span style="color:#ffb01a;">ثاني اثنين</span>',
+'<span style="color: #7585c1;">للإنسان جفنان فكم جفن للطيور؟</span><br><span style="color:#ffb01a;">٣ جفون</span>',
+'<span style="color: #7585c1;">قي أي سنة تحولت القبلة من بيت المقدس إلى البيت الحرام؟</span><br><span style="color:#ffb01a;"> الثانية للهجرة</span>',
+'<span style="color: #7585c1;">كم عدد السور التي افتتحت بثلاث أحرف؟</span><br><span style="color:#ffb01a;">ثلاثة عشر سورة</span>',
+'<span style="color: #7585c1;">في أي عام كان فتح مكة؟</span><br><span style="color:#ffb01a;">الثامن للهجرة</span>',
+'<span style="color: #7585c1;">ما هو عدد السنين التي قضاها أهل الكهف وهم نائمين؟</span><br><span style="color:#ffدb01a;">٣٠٩</span>',
+'<span style="color: #7585c1;">كلمة تقابل كثرة المال ؟</span><br><span style="color:#ffb01a;">ثراء</span>' 
+      ],
+      // حرف ج
+    E: [
+'<span style="color: #7585c1;">مسجد يقع شمال شرق الهفوف وهو اقدم مسجد في شرق الجزيرة ؟</span><br><span style="color:#ffb01a;">جواثا</span>',
+'<span style="color: #7585c1;">الجبل الذي رست عليه سفينة نوح؟</span><br><span style="color:#ffb01a;">الجودي</span>',
+'<span style="color: #7585c1;">من هو صاحب الشخصية الشريرة في فيلم علاء الدين والمصباح السحري؟</span><br><span style="color:#ffb01a;">جعفر</span>',
+'<span style="color: #7585c1;">ماذا يعني اسم الملكة الفرعونية نفرتيتي ؟</span><br><span style="color:#ffb01a;">الجميلة اتت</span>',
+'<span style="color: #7585c1;">الروح القدس الامين ؟</span><br><span style="color:#ffb01a;">جبريل</span>',
+'<span style="color: #7585c1;">من اكبر اعضاء جسم الانسان يمثل ١٦ بالمئة من وزنه الكلي ؟</span><br><span style="color:#ffb01a;">الجلد</span>',
+'<span style="color: #7585c1;">نوع من المخلوقات مسؤول عن انتشار مرض الطاعون ؟</span><br><span style="color:#ffb01a;">جرذان</span>',
+'<span style="color: #7585c1;">ما معنى كنود في قوله تعالى (ان الانسان لربه لكنود )؟</span><br><span style="color:#ffb01a;">جحود</span>',
+'<span style="color: #7585c1;">اصغر دولة اسلاميه في افريقيا ؟</span><br><span style="color:#ffb01a;">جزر القمر</span>',
+'<span style="color: #7585c1;">يطلق على كل ذي ناب من السباع أو مخلب من الطير ؟</span><br><span style="color:#ffb01a;">جارح</span>',
+'<span style="color: #7585c1;">الملك الذي قتله نبي الله داوود ؟</span><br><span style="color:#ffb01a;">جالوت</span>',
+'<span style="color: #7585c1;">احد فروع علم الرياضيات ؟</span><br><span style="color:#ffb01a;">جبر</span>',
+'<span style="color: #7585c1;">متوسط الفترة الزمنية بين ولادة الآباء وولادة أبنائهم وتقدر ان مدته ٣٣ عاما ؟</span><br><span style="color:#ffb01a;">جيل</span>',
+'<span style="color: #7585c1;">اسم يوناني يعني علم طبقات الارض ؟</span><br><span style="color:#ffb01a;">جيولوجيا</span>',
+'<span style="color: #7585c1;">الارض القاحلة التي لا ماء فيها ؟</span><br><span style="color:#ffb01a;">جدباء</span>',
+'<span style="color: #7585c1;">المكان الذي يبيت فيه الضب وتختبئ فيه الزواحف وبعض الحشرات ؟</span><br><span style="color:#ffb01a;">الجحر</span>',
+'<span style="color: #7585c1;">اكبر بذرة في العالم هي بذرة.. ؟</span><br><span style="color:#ffb01a;">جوز الهند المزدوج</span>',
+'<span style="color: #7585c1;">عالم عربي مشهور يلقب بابي الكيمياء ؟</span><br><span style="color:#ffb01a;">جابر بن حيان</span>',
+'<span style="color: #7585c1;">حيوان يخزن المواد الدهنية ليتغذى بها ؟</span><br><span style="color:#ffb01a;">جمل</span>',
+'<span style="color: #7585c1;">ما يصلح للذبح من الابل ؟</span><br><span style="color:#ffb01a;">جاسور</span>',
+'<span style="color: #7585c1;">احدى زوجات الرسول ﷺ ؟</span><br><span style="color:#ffb01a;">جويريه بنت الحارث رضي الله عنها</span>',
+'<span style="color: #7585c1;">رجل تنسب اليه الكثير من الحكايات الفكاهية ؟</span><br><span style="color:#ffb01a;">جحا</span>',
+'<span style="color: #7585c1;">جهنم اسم من اسماء النار ولها على حرف الجيم اسم اخر فما هو ؟</span><br><span style="color:#ffb01a;">جحيم</span>',
+'<span style="color: #7585c1;">اسم مثنى يطلق على الليل والنهار ؟</span><br><span style="color:#ffb01a;">جديدان</span>',
+'<span style="color: #7585c1;">يطلق على البئر الذي لم يبنى بالحجارة ؟</span><br><span style="color:#ffb01a;">جب</span>',
+'<span style="color: #7585c1;">صفة للأرض التي لا خير فيها ؟</span><br><span style="color:#ffb01a;">جرداء</span>',
+'<span style="color: #7585c1;">من السور التي بدأت ب “حم” ؟</span><br><span style="color:#ffb01a;">الجاثية</span>',
+'<span style="color: #7585c1;">قال الرسول ﷺ عنه ان جبريل مازال يوصيه به حتى ظن أنه سيورِّثه ؟</span><br><span style="color:#ffb01a;">الجار</span>',
+'<span style="color: #7585c1;">في اي دولة اجريت اول عملية زراعة قلب ؟</span><br><span style="color:#ffb01a;">جنوب افريقيا</span>',
+'<span style="color: #7585c1;">مجموعة من بلد واحد تعيش في دولة اخرى ماذا تسمى ؟</span><br><span style="color:#ffb01a;">جاليات</span>',
+'<span style="color: #7585c1;">من اقدم انواع الاغذية المعروفه واكثرها تنوعا يصنع اساسها من اللبن ؟</span><br><span style="color:#ffb01a;">الجبن</span>',
+'<span style="color: #7585c1;">موسوعة عالمية تسجل فيها الارقام القياسية للامور الخارقة عن العادة ؟</span><br><span style="color:#ffb01a;">جينيس</span>'
+      ],
+
+  // حرف ح
+
+    F: [
+'<span style="color: #7585c1;">يطلق على شدة الندم على ما فات ؟</span><br><span style="color:#ffb01a;">حسرة</span>',
+'<span style="color: #7585c1;">اكمل المثل" احفر نفق بمسمار ولا تجادل واحد .."؟</span><br><span style="color:#ffb01a;">حمار</span>',
+'<span style="color: #7585c1;">من الصحابي الذي قتله المسلمون خطأ يوم احد ؟</span><br><span style="color:#ffb01a;">حسيل بن جابر</span>',
+'<span style="color: #7585c1;">ما مذكر اتان ؟</span><br><span style="color:#ffb01a;">حمار</span>',
+'<span style="color: #7585c1;">من هو اصغر اعمام النبي ﷺ ؟</span><br><span style="color:#ffb01a;">حمزة بن عبد المطلب</span>',
+'<span style="color: #7585c1;">وحدة لقياس القوه وتقاس بها قوه المحركات ؟</span><br><span style="color:#ffb01a;">حصان</span>',
+'<span style="color: #7585c1;">ما هو فراش النبي ﷺ؟</span><br><span style="color:#ffb01a;">الحصير</span>',
+'<span style="color: #7585c1;">خيط ناعم متين نصف شفاف تفرزه دودة القز ؟</span><br><span style="color:#ffb01a;">حرير</span>',
+'<span style="color: #7585c1;">لقب الصحابي عبدالله بن عباس رضي الله عنه ؟</span><br><span style="color:#ffb01a;">حبر الأمة</span>',
+'<span style="color: #7585c1;">من اقسام الكلمة ؟</span><br><span style="color:#ffb01a;">حرف</span>',
+'<span style="color: #7585c1;">في اي غزوه قال الرسول ﷺ ( انا النبي لا كذب انا ابن عبدالمطلب) ؟</span><br><span style="color:#ffb01a;">حنين</span>',
+'<span style="color: #7585c1;">اسم من اسماء النار ؟</span><br><span style="color:#ffb01a;">حطمة</span>',
+'<span style="color: #7585c1;">حيوان يستخرج منه العنبر ؟</span><br><span style="color:#ffb01a;">حوت</span>',
+'<span style="color: #7585c1;">اضخم حيوان لا فقاري ؟</span><br><span style="color:#ffb01a;">حبار</span>',
+'<span style="color: #7585c1;">ماذا يغطي السمكة ؟</span><br><span style="color:#ffb01a;">حراشف</span>',
+'<span style="color: #7585c1;">سوره في القران فيها سجدتين ؟</span><br><span style="color:#ffb01a;">الحج</span>',
+'<span style="color: #7585c1;">من اوصاف نبي الله يحيى في القران ؟</span><br><span style="color:#ffb01a;">حصورا</span>',
+'<span style="color: #7585c1;">ماذا يطلق على صوت اجنحة الطيور ؟</span><br><span style="color:#ffb01a;">حفيف</span>',
+'<span style="color: #7585c1;">من هو الرجل الذي طأطأت له رؤوس الملوك ؟</span><br><span style="color:#ffb01a;">حلاق</span>',
+'<span style="color: #7585c1;">شاعر من بني النجار اسلم وصار شاعر الرسول ﷺ ؟</span><br><span style="color:#ffb01a;">حسان بن ثابت</span>',
+'<span style="color: #7585c1;">ماذا يطلق على نساء الجنة ؟</span><br><span style="color:#ffb01a;">الحور العين</span>',
+'<span style="color: #7585c1;">في النحو من علامات نصب الافعال الخمسة ؟</span><br><span style="color:#ffb01a;">حذف النون</span>',
+'<span style="color: #7585c1;">اشهر الكرماء في التاريخ العربي ؟</span><br><span style="color:#ffb01a;">حاتم الطائي</span>',
+'<span style="color: #7585c1;">الاسم الذي يطلقه العرب على اثيوبيا ؟</span><br><span style="color:#ffb01a;">الحبشة</span>',
+'<span style="color: #7585c1;">يطلق على صوت المحتضر ؟</span><br><span style="color:#ffb01a;">حشرجة</span>',
+'<span style="color: #7585c1;">من تلاميذ الإمام الشافعي , يلقب بالشيباني , آراءه الفقهية مستمدة مباشرة من الحديث الشريف ، له مسند باسمه ، اشتهر مذهبه بالمذهب ؟</span><br><span style="color:#ffb01a;">الحنبلي</span>',
+'<span style="color: #7585c1;">من عجائب الدنيا السبع ؟</span><br><span style="color:#ffb01a;">حدائق بابل المعلقة</span>',
+'<span style="color: #7585c1;">لفظة معناها اللغوي الطرف او الجانب وتطلق ايضا على مرافقين الزعيم او الرئيس ؟</span><br><span style="color:#ffb01a;">حاشية</span>',
+'<span style="color: #7585c1;">ما اسم اكبر ابناء عبدالمطلب بن هاشم جد الرسول ﷺ ؟</span><br><span style="color:#ffb01a;">الحارث</span>',
+'<span style="color: #7585c1;">اسم من اسماء يوم القيامة ؟</span><br><span style="color:#ffb01a;">الحاقة</span>',
+'<span style="color: #7585c1;">جنس من الاشجار يشمل البرتقال والليمون موطنه الاصلي اسيا الشرقية ؟</span><br><span style="color:#ffb01a;">الحمضيات</span>',
+'<span style="color: #7585c1;">سورة من سور القرآن الكريم تحتوي آياتها الكريمة على سجدتين؟</span><br><span style="color:#ffb01a;">الحج</span>',
+'<span style="color: #7585c1;">ما هي السورة التي بدأت وانتهت بالتسبيح؟</span><br><span style="color:#ffb01a;">الحشر</span>',
+'<span style="color: #7585c1;">اسم مثنى يطلق النصر والشهادة ؟</span><br><span style="color:#ffb01a;">الحسنيين</span>',
+'<span style="color: #7585c1;">لقب اطلقه القران على ام جميل اخت ابو سفيان بن حرب و زوجة ابو لهب ؟</span><br><span style="color:#ffb01a;">حمالة الحطب</span>',
+'<span style="color: #7585c1;">من امهات المسلين رضي الله عنهم ؟</span><br><span style="color:#ffb01a;">حفصة بنت عمر رضي الله عنها</span>',
+'<span style="color: #7585c1;">اصغر جزء في الرئه عبارة عن جيوب صغيرة تجري فيها جميع عمليات تبادل الغازات في الرئتين بين الجو الخارجي والدم ؟</span><br><span style="color:#ffb01a;">حويصلات</span>',
+'<span style="color: #7585c1;">الى اين اشار النبي على المسلمين الهجرة بعد ان اشتد اذى مشركي قريش عليهم ؟</span><br><span style="color:#ffb01a;">الحبشة</span>',
+'<span style="color: #7585c1;">ما معنى كلمة رمضان في القاموس العربي ؟</span><br><span style="color:#ffb01a;">الحر الشديد</span>',
+'<span style="color: #7585c1;">ما هو الشيء الذي يستطيع أن يراه الكفيف؟</span><br><span style="color:#ffb01a;">الحلم</span>',
+'<span style="color: #7585c1;">تعبير يطلق على الدول التي حاربت دول الوسط ودول المحور في الحرب العالمية الثانية ؟</span><br><span style="color:#ffb01a;">الحلفاء</span>'   
+      ],
+      // حرف خ
+
+    G: [
+'<span style="color: #7585c1;">نتوء حوله شعر اسود في حجم بيضة الحمامة بين كتفي النبي ﷺ ؟</span><br><span style="color:#ffb01a;">خاتم النبوة</span>',
+'<span style="color: #7585c1;">سورة المجادلة نزلت في امرأة صحابية سمع الله شكواها من فوق سبع سماوات فمن هذه المرأة ؟</span><br><span style="color:#ffb01a;">خولة بنت ثعلبة</span>',
+'<span style="color: #7585c1;">من القائل “فلا نامت اعين الجبناء” ؟</span><br><span style="color:#ffb01a;">خالد بن الوليد</span>',
+'<span style="color: #7585c1;">حيوان شبه اعمى يعيش في أنفاق تحت الارض ؟</span><br><span style="color:#ffb01a;">الخلد</span>',
+'<span style="color: #7585c1;">غزوة الأحزاب تعرف بغزوة ؟</span><br><span style="color:#ffb01a;">الخندق</span>',
+'<span style="color: #7585c1;">كيف اهلك الله قارون ؟</span><br><span style="color:#ffb01a;">خسف به الارض</span>',
+'<span style="color: #7585c1;">هو اسم قدم البعير ؟</span><br><span style="color:#ffb01a;">خف</span>',
+'<span style="color: #7585c1;">انعقاد اللسان عن الكلام ؟</span><br><span style="color:#ffb01a;">خرس</span>',
+'<span style="color: #7585c1;">مرادف الحياء ؟</span><br><span style="color:#ffb01a;">الخجل</span>',
+'<span style="color: #7585c1;">ما الحيوان الذي يطلق عليه دب النمل؟</span><br><span style="color:#ffb01a;">خنزير</span>',
+'<span style="color: #7585c1;">ما هو الاسم الشائع لحامض الأستيك المخفف ؟</span><br><span style="color:#ffb01a;">الخل</span>',
+'<span style="color: #7585c1;">من اي مادة يصنع ورق الصحف ؟</span><br><span style="color:#ffb01a;">خشب الاشجار</span>',
+'<span style="color: #7585c1;">ما تغطي فيه المرأة رأسها ؟</span><br><span style="color:#ffb01a;">خمار</span>',
+'<span style="color: #7585c1;">الزيت الوحيد الذي لا يتأثر بالحرارة او البرودة فلا يسيل او يتجمد هو زيت؟</span><br><span style="color:#ffb01a;">الخروع</span>',
+'<span style="color: #7585c1;">كم عين للذبابة ؟</span><br><span style="color:#ffb01a;">خمس اعين</span>',
+'<span style="color: #7585c1;">أصبع اليد الاصغر ؟</span><br><span style="color:#ffb01a;">خنصر</span>',
+'<span style="color: #7585c1;">لا تعتمد الاوراق الرسمية الا به ؟</span><br><span style="color:#ffb01a;">ختم</span>',
+'<span style="color: #7585c1;">مدينه يلتقي فيها النيل الابيض والنيل الازرق ؟</span><br><span style="color:#ffb01a;">خرطوم</span>',
+'<span style="color: #7585c1;">المولود الذي يولد قبل موعده الطبيعي يسمى ؟</span><br><span style="color:#ffb01a;">خديج</span>',
+'<span style="color: #7585c1;">اصلاح النعال ورتقها ؟</span><br><span style="color:#ffb01a;">خصف</span>',
+'<span style="color: #7585c1;">من الصحابيات التي فقدت ابناءها وزوجها وصبرت ؟</span><br><span style="color:#ffb01a;">الخنساء</span>',
+'<span style="color: #7585c1;">بماذا صور القران خدمة الوالدين والذل لهما ؟</span><br><span style="color:#ffb01a;">خفض الجناح</span>',
+'<span style="color: #7585c1;">هو شجر هندي سريع النمو لين القضبان أملس العيدان تصنع منه الكراسي ؟</span><br><span style="color:#ffb01a;">خيزران</span>',
+'<span style="color: #7585c1;">هو مرادف للخوف ؟</span><br><span style="color:#ffb01a;">خشية</span>',
+'<span style="color: #7585c1;">ماهي ام الخبائث؟</span><br><span style="color:#ffb01a;">الخمر</span>',
+'<span style="color: #7585c1;">مدينة في منطقة عسير وتقع على هضبه مرتفعة فماهي ؟</span><br><span style="color:#ffb01a;">خميس مشيط</span>',
+'<span style="color: #7585c1;">صلاة يقوم فيها المصلي بالركوع والسجود أربع مرات، فما هي تلك الصلاة ؟</span><br><span style="color:#ffb01a;">الخسوف</span>',
+'<span style="color: #7585c1;">لقب يطلق على ابراهيم عليه السلام ؟</span><br><span style="color:#ffb01a;">الخليل</span>',
+'<span style="color: #7585c1;">اول من صلى ركعتين قبل ان يقتل ؟</span><br><span style="color:#ffb01a;">خبيب بن عدي</span>',
+'<span style="color: #7585c1;">ماء لم يخرج من الأرض و لم ينزل من السماء؟</span><br><span style="color:#ffb01a;">دموع</span>',
+'<span style="color: #7585c1;">كيف أهلك الله تعالى قارون؟</span><br><span style="color:#ffb01a;">خسف به الأرض</span>' ,     
+'<span style="color: #7585c1;"> نقطة العبور البرية بين السعودية الكويت ؟</span><br><span style="color:#ffb01a;">الخفجي</span>'      
+      ],
+      // حرف د
+    H: [
+'<span style="color: #7585c1;">كمل( كل عود وله .. )؟</span><br><span style="color:#ffb01a;">دخان</span>',
+'<span style="color: #7585c1;">ما هو مقياس الصوت ؟</span><br><span style="color:#ffb01a;">ديسيبل</span>',
+'<span style="color: #7585c1;">اسم مثنى يطلق على الدنيا والاخرة ؟</span><br><span style="color:#ffb01a;">الدارين</span>',
+'<span style="color: #7585c1;">ظاهرة مرضيه تصيب بعض من يركب سفينة او قارب ؟</span><br><span style="color:#ffb01a;">دوار البحر</span>',
+'<span style="color: #7585c1;">يضخه القلب الى جميع اجزاء الجسم ؟</span><br><span style="color:#ffb01a;">الدم</span>',
+'<span style="color: #7585c1;">هو الزمان الطويل مدة الحياة كلها ؟</span><br><span style="color:#ffb01a;">دهر</span>',
+'<span style="color: #7585c1;">وحدة من وحدات النقود عن العرب ذكرت في سورة ال عمران ؟</span><br><span style="color:#ffb01a;">دينار</span>',
+'<span style="color: #7585c1;">هو المرض والعله ؟</span><br><span style="color:#ffb01a;">داء</span>',
+'<span style="color: #7585c1;">اصغر حيوان بحري من الثديات ؟</span><br><span style="color:#ffb01a;">دولفين</span>',
+'<span style="color: #7585c1;">معنى سابغات في قوله تعالى “ (أَنِ اعْمَلْ سَابِغَاتٍ )” ؟</span><br><span style="color:#ffb01a;">دروع</span>',
+'<span style="color: #7585c1;">الليلة الثلاثون من كل شهر قمري سميت بذلك لشدة ظلمتها ؟</span><br><span style="color:#ffb01a;">الدلماء</span>',
+'<span style="color: #7585c1;">صوت النمل ؟</span><br><span style="color:#ffb01a;">دبيب</span>',
+'<span style="color: #7585c1;">اسم يوم الاربعاء قبل الاسلام ؟</span><br><span style="color:#ffb01a;">دبار</span>',
+'<span style="color: #7585c1;">ما هو الحيوان الملقب بابو اليقظان ؟</span><br><span style="color:#ffb01a;">ديك</span>',
+'<span style="color: #7585c1;">اكبر مدينة في المغرب ؟</span><br><span style="color:#ffb01a;">الدار البيضاء</span>',
+'<span style="color: #7585c1;">حشره تشبه النحل لكنها اكبر منه واقل نظامها ؟</span><br><span style="color:#ffb01a;">الدبور</span>',
+'<span style="color: #7585c1;">المجرة التي تقع فيها المجموعة الشمسية ؟</span><br><span style="color:#ffb01a;">درب التبانة</span>',
+'<span style="color: #7585c1;">يَخرُجُ مِن أرضٍ بالمَشرِقِ، يُقالُ لها: خُراسانُ، يَتْبَعُه أَقوامٌ كأنَّ وُجوهَهُمُ المَجانُّ المُطْرَقةُ ؟</span><br><span style="color:#ffb01a;">الدجال</span>',
+'<span style="color: #7585c1;">الممر الواصل بين الباب والدار يسمى ؟</span><br><span style="color:#ffb01a;">دهليز</span>',
+'<span style="color: #7585c1;">ما هو صغير الدب ؟</span><br><span style="color:#ffb01a;">ديسم</span>',
+'<span style="color: #7585c1;">مرض انتفاخ العروق وعدم جريان الدم بانتظام في الساقين ؟</span><br><span style="color:#ffb01a;">دوالي</span>',
+'<span style="color: #7585c1;">ما الاسم العربي للخوخ ؟</span><br><span style="color:#ffb01a;">دراق</span>',
+'<span style="color: #7585c1;">هو اللحاء المستخرج من شجرة الجوز، مصدر من مصادر جمال المرأة العربية في القرن الماضي استخلصته من الطبيعة ؟</span><br><span style="color:#ffb01a;">الديرم</span>',
+'<span style="color: #7585c1;">من اغلى انواع العطور العربية ؟</span><br><span style="color:#ffb01a;">دهن العود</span>',
+'<span style="color: #7585c1;">من أول من قال أما بعد؟</span><br><span style="color:#ffb01a;">داود عليه السلام</span>',
+'<span style="color: #7585c1;">كتاب تجمع فيه قصائد الشعر؟</span><br><span style="color:#ffb01a;">ديوان  </span>',
+'<span style="color: #7585c1;">ماء لم يخرج من الأرض و لم ينزل من السماء؟</span><br><span style="color:#ffb01a;">دموع</span>',
+'<span style="color: #7585c1;">لفظ اجنبي شائع الاستخدام للدلالة على الطبق المستقبل لبث القنوات الفضائية من الأقمار الاصطناعية ؟</span><br><span style="color:#ffb01a;">دش</span>',
+'<span style="color: #7585c1;">قال الرسول ﷺ " من يرد الله به خيرا يفقهه في .."؟</span><br><span style="color:#ffb01a;">الدين</span>',
+'<span style="color: #7585c1;">معالجة جلود الحيوانات ببعض الاملاح والكيماويات لجعلها صالحة للاستخدام تسمى ؟</span><br><span style="color:#ffb01a;">دباغة</span>'      
+      ],
+      // حرف ذ
+    I: [
+'<span style="color: #7585c1;">مقياس شعبي كان يستخدم في قياس الأراضي الزراعية؟</span><br><span style="color:#ffb01a;">الذراع</span>',
+'<span style="color: #7585c1;">عبادة من أيسر العبادات؟</span><br><span style="color:#ffb01a;">ذكر الله</span>',
+'<span style="color: #7585c1;">ما هو مفرد "أولئك"؟</span><br><span style="color:#ffb01a;">ذلك</span>',
+'<span style="color: #7585c1;">ما يخبئ لوقت الحاجة؟</span><br><span style="color:#ffb01a;">الذخر</span>',
+'<span style="color: #7585c1;">رصاص وعدة الحرب؟</span><br><span style="color:#ffb01a;">الذخيرة</span>',
+'<span style="color: #7585c1;">هي المرأة سليطة اللسان؟</span><br><span style="color:#ffb01a;">الذربة</span>',
+'<span style="color: #7585c1;">ما يوصف به نزول الدمع من العين؟</span><br><span style="color:#ffb01a;">الذرف</span>',
+'<span style="color: #7585c1;">أول معركة بحرية في الإسلام؟</span><br><span style="color:#ffb01a;">ذات الصواري</span>',
+'<span style="color: #7585c1;">حشرة ذكرت في القرآن الكريم؟</span><br><span style="color:#ffb01a;">الذبابة</span>',
+'<span style="color: #7585c1;">سورة قرآنية معنى اسمها الرياح؟</span><br><span style="color:#ffb01a;">الذاريات</span>',
+'<span style="color: #7585c1;">الانكسار والخضوع والهوان؟</span><br><span style="color:#ffb01a;">الذل</span>',
+'<span style="color: #7585c1;">في اللغة بمعنى الخوف والفزع؟</span><br><span style="color:#ffb01a;">الذعر</span>',
+'<span style="color: #7585c1;">ملك عظيم صاحب خير ورد ذكره في القرآن؟</span><br><span style="color:#ffb01a;">ذو القرنين</span>',
+'<span style="color: #7585c1;">لقب نبي الله إسماعيل عليه السلام؟</span><br><span style="color:#ffb01a;">الذبيح</span>',
+'<span style="color: #7585c1;">ما هو ميقات أهل المدينة ومن في وجهتهم؟</span><br><span style="color:#ffb01a;">ذو الحليفة</span>',
+'<span style="color: #7585c1;">ما الحيوان الذي تحدى الله به الكافرين أن يخلقوا مثله ؟ ؟</span><br><span style="color:#ffb01a;">ذبابه </span>',
+'<span style="color: #7585c1;">ما الحيوان الذي اتهم بعمل لم يقم به ؟</span><br><span style="color:#ffb01a;">الذئب</span>',    
+      ],
+
+ // حرف ر
+
+  J: [
+  '<span style="color: #7585c1;">أحد أصناف أسنان الفم في الإنسان؟</span><br><span style="color:#ffb01a;">الرحى</span>',
+'<span style="color: #7585c1;">منتج شعاره الدعائي يعطيك جوانح؟</span><br><span style="color:#ffb01a;">ريد بول</span>',
+'<span style="color: #7585c1;">مهنة قديمة امتهنها كثير من الأنبياء؟</span><br><span style="color:#ffb01a;">راعي</span>',
+'<span style="color: #7585c1;">أداة قديمة لطحن الحبوب؟</span><br><span style="color:#ffb01a;">رحى</span>',
+'<span style="color: #7585c1;">الجماعة من ٣ الى ١٠؟</span><br><span style="color:#ffb01a;">رهط</span>',
+'<span style="color: #7585c1;">جبل عرفات هو جبل؟</span><br><span style="color:#ffb01a;">الرحمة</span>',
+'<span style="color: #7585c1;">اكمل المثل "يا داخل بين البصلة وقشرتها …ما ينوبك ألا.. "؟</span><br><span style="color:#ffb01a;">ريحتها</span>',
+'<span style="color: #7585c1;">لفظ قرآني يطلق على الجبال الثابتة؟</span><br><span style="color:#ffb01a;">رواسي</span>',
+'<span style="color: #7585c1;">شعر يقال في الميت؟</span><br><span style="color:#ffb01a;">رثاء</span>',
+'<span style="color: #7585c1;">ما هي الفصيلة التي ينتمي لها الأخطبوط؟</span><br><span style="color:#ffb01a;">الرخويات</span>',
+'<span style="color: #7585c1;">هي نسبة الماء في الهواء؟</span><br><span style="color:#ffb01a;">رطوبة</span>',
+'<span style="color: #7585c1;">شخص يحتجز لضمان اتفاق ما؟</span><br><span style="color:#ffb01a;">رهينة</span>',
+'<span style="color: #7585c1;">هو محلول يفرز في الأزهار ويمتصه النحل ليصنع منه العسل؟</span><br><span style="color:#ffb01a;">رحيق</span>',
+'<span style="color: #7585c1;">ما هي عروس القرآن؟</span><br><span style="color:#ffb01a;">الرحمن</span>',
+'<span style="color: #7585c1;">ما هي لغة النحل؟</span><br><span style="color:#ffb01a;">الرقص</span>',
+'<span style="color: #7585c1;">من الأشهر الحرم؟</span><br><span style="color:#ffb01a;">رجب</span>',
+'<span style="color: #7585c1;">من الشرك الأصغر؟</span><br><span style="color:#ffb01a;">رياء</span>',
+'<span style="color: #7585c1;">مرحلة من عمر الإنسان يبلغ فيها سن العقل؟</span><br><span style="color:#ffb01a;">رشد</span>',
+'<span style="color: #7585c1;">الباب الذي يدخل منه الصائمون يوم القيامة؟</span><br><span style="color:#ffb01a;">الريان</span>',
+'<span style="color: #7585c1;">ماذا يقال للشاة إذا ما استقرت في مكانها؟</span><br><span style="color:#ffb01a;">ربضت</span>',
+'<span style="color: #7585c1;">ما عملة إندونيسيا؟</span><br><span style="color:#ffb01a;">روبية أندونيسية</span>',
+'<span style="color: #7585c1;">مادة أساسية في صنع الزجاج؟</span><br><span style="color:#ffb01a;">الرمل</span>',
+'<span style="color: #7585c1;">ما معنى اسم سيبويه؟</span><br><span style="color:#ffb01a;">رائحة التفاح</span>',
+'<span style="color: #7585c1;">ماذا تسمى النفخة الأولى في الصور يوم القيامة؟</span><br><span style="color:#ffb01a;">الراجفة</span>',
+'<span style="color: #7585c1;">من الأزهار ورد في القرآن الكريم؟</span><br><span style="color:#ffb01a;">ريحان</span>',
+'<span style="color: #7585c1;">هو إصلاح الثوب ووصل قطعتيه المنفصلتين؟</span><br><span style="color:#ffb01a;">رتق</span>',
+'<span style="color: #7585c1;">نوع من أنواع الأشعة الحديثة لتصوير الدماغ بالألوان؟</span><br><span style="color:#ffb01a;">رنين مغناطيسي</span>',
+'<span style="color: #7585c1;">هي باطن كف اليد في اللغة؟</span><br><span style="color:#ffb01a;">راحة اليد</span>',
+'<span style="color: #7585c1;">من أمراض العين؟</span><br><span style="color:#ffb01a;">رمد</span>',
+'<span style="color: #7585c1;">في اللغة: زين الشيء بالجواهر يعني؟</span><br><span style="color:#ffb01a;">رصعه</span>',
+'<span style="color: #7585c1;">هو ولد الظبية إذا قوي وتحرك ومشى مع أمه؟</span><br><span style="color:#ffb01a;">الرشا</span>',
+'<span style="color: #7585c1;">المفصل الذي يقع بين الساق والقدم هو؟</span><br><span style="color:#ffb01a;">الرسغ</span>',
+'<span style="color: #7585c1;">هو حالة انحسار النشاط الاقتصادي؟</span><br><span style="color:#ffb01a;">ركود</span>',
+'<span style="color: #7585c1;">جزء من اليابسة داخل في الماء ماذا يسمى؟</span><br><span style="color:#ffb01a;">رأس</span>',
+'<span style="color: #7585c1;">ما يطلق على نقاط الماء الخفيفة المتساقطة؟</span><br><span style="color:#ffb01a;">رذاذ</span>',
+'<span style="color: #7585c1;">ماذا سخره الله تعالى لسليمان عليه السلام؟</span><br><span style="color:#ffb01a;">الريح</span>'      
+      ],
+
+ // حرف ز
+   K: [
+'<span style="color: #7585c1;">درجة علمية عالية؟</span><br><span style="color:#ffb01a;">الزمالة</span>',
+'<span style="color: #7585c1;">صحابي ورد ذكره في القرآن؟</span><br><span style="color:#ffb01a;">زيد بن الحارثة</span>',
+'<span style="color: #7585c1;">ما هي الشجرة المقصودة في قوله تعالى: وشجرة تخرج من طور سيناء؟</span><br><span style="color:#ffb01a;">الزيتون</span>',
+'<span style="color: #7585c1;">نبات له عروق غليظة حارة الطعم يأكل ويشرب؟</span><br><span style="color:#ffb01a;">زنجبيل</span>',
+'<span style="color: #7585c1;">اسم يطلق على ملائكة العذاب؟</span><br><span style="color:#ffb01a;">زبانية</span>',
+'<span style="color: #7585c1;">حركة تحدث في العين عندما تمتلئ بالدموع وتجعل الشخص لا يرى جيدًا؟</span><br><span style="color:#ffb01a;">زغللة</span>',
+'<span style="color: #7585c1;">صوت موسيقي يطلق من فم النساء في ساعات الفرح؟</span><br><span style="color:#ffb01a;">زغاريد</span>',
+'<span style="color: #7585c1;">كتاب أُنزِلَ على نبي الله داوود؟</span><br><span style="color:#ffb01a;">زبور</span>',
+'<span style="color: #7585c1;">يطلق على الوقت قليلاً كان أم كثيرًا؟</span><br><span style="color:#ffb01a;">زمن</span>',
+'<span style="color: #7585c1;">يطلق على المطر إذا كان قليلاً؟</span><br><span style="color:#ffb01a;">زخات</span>',
+'<span style="color: #7585c1;">المعدن الذي يكون سائلاً في درجة الحرارة العادية؟</span><br><span style="color:#ffb01a;">زئبق</span>',
+'<span style="color: #7585c1;">حلوى شعبية تعرف عند أهل المغرب الشباكية؟</span><br><span style="color:#ffb01a;">زلابية</span>',
+'<span style="color: #7585c1;">اسم اليوم الذي اختاره فرعون للقاء موسى أمام الناس؟</span><br><span style="color:#ffb01a;">الزينة</span>',
+'<span style="color: #7585c1;">ما هو الكوكب الذي يومه أطول من العام؟</span><br><span style="color:#ffb01a;">زهرة</span>',
+'<span style="color: #7585c1;">علو الصوت بالصراخ؟</span><br><span style="color:#ffb01a;">زعيق</span>',
+'<span style="color: #7585c1;">نوع من الحمام كان يستخدم قديمًا لإرسال البريد؟</span><br><span style="color:#ffb01a;">زاجل</span>',
+'<span style="color: #7585c1;">هو حجر كريم شفاف شديد الخضرة وأشد الخضرة هو وجوده؟</span><br><span style="color:#ffb01a;">زمرد</span>',
+'<span style="color: #7585c1;">أول من سل سيفًا في سبيل الله؟</span><br><span style="color:#ffb01a;">الزبير بن العوام</span>',
+'<span style="color: #7585c1;">يابس وصافي كالماء ولد في النار وإذا أعيد اليها انهار؟</span><br><span style="color:#ffb01a;">زجاج</span>',
+'<span style="color: #7585c1;">اهتزاز في الأرض وارتجافها؟</span><br><span style="color:#ffb01a;">زلزال</span>',
+'<span style="color: #7585c1;">الشكل الناتج عن مستقيمين متقاطعين في نقطة؟</span><br><span style="color:#ffb01a;">زاوية</span>',
+'<span style="color: #7585c1;">من أغلى أنواع التوابل؟</span><br><span style="color:#ffb01a;">زعفران</span>',
+'<span style="color: #7585c1;">أكثر حيوان تحملًا للعطش؟</span><br><span style="color:#ffb01a;">زرافة</span>',
+'<span style="color: #7585c1;">العنب إذا جف؟</span><br><span style="color:#ffb01a;">زبيب</span>',
+'<span style="color: #7585c1;">هو ما بين مفصل الكوع والكتف في جسم الإنسان؟</span><br><span style="color:#ffb01a;">زند</span>',
+'<span style="color: #7585c1;">سائل لزج غير ذواب في الماء حيواني أو نباتي أو معدني المنشأ؟</span><br><span style="color:#ffb01a;">زيت</span>',
+'<span style="color: #7585c1;">في اللغة هو الممر الطويل الضيق؟</span><br><span style="color:#ffb01a;">زقاق</span>',
+'<span style="color: #7585c1;">هيجان الرياح وتصاعد الرمال المحمولة إلى السماء؟</span><br><span style="color:#ffb01a;">زوابع</span>',
+'<span style="color: #7585c1;">اسم علم لامرأة كان يضرب بها المثل في حدة البصر؟</span><br><span style="color:#ffb01a;">زرقاء اليمامة</span>',
+'<span style="color: #7585c1;">من المع الأجرام السماوية في النظام الشمسي؟</span><br><span style="color:#ffb01a;">الزهرة</span>',
+'<span style="color: #7585c1;">اسم امرأة عزيز مصر؟</span><br><span style="color:#ffb01a;">زليخة</span>',
+'<span style="color: #7585c1;">طقش على طقش كما الحنا كما النقش ؟</span><br><span style="color:#ffb01a;">زولية</span>',
+'<span style="color: #7585c1;">قالوا “من اعجب برأيه ضل ومن استغنى بعقله ..” ؟</span><br><span style="color:#ffb01a;">زل</span>',
+'<span style="color: #7585c1;">يطلق على المشتري الدائم التردد على محل واحد؟</span><br><span style="color:#ffb01a;">زبون</span>',
+'<span style="color: #7585c1;">ذنب ذكر في القران لن يقع ولم يقع حتى قيام القيامة؟</span><br><span style="color:#ffb01a;">الزواج بزوجات الرسول ﷺ</span>',
+'<span style="color: #7585c1;">  لفظ يعني شدة البرد والريح وقد ورد ذكره في القرآن الكريم؟</span><br><span style="color:#ffb01a;">زمهرير</span>'
+
+      ],
+
+ // حرف س
+
+    L: [
+
+'<span style="color: #7585c1;">من السبع الموبقات؟</span><br><span style="color:#ffb01a;">السحر</span>',
+'<span style="color: #7585c1;">لقب علي بن أبي طالب بلقمان الحكيم؟</span><br><span style="color:#ffb01a;">سلمان الفارسي</span>',
+'<span style="color: #7585c1;">ثاني أمهات المؤمنين تزوجها الرسول ﷺ بعد خديجة رضي الله عنهما؟</span><br><span style="color:#ffb01a;">سودة بنت زمعة</span>',
+'<span style="color: #7585c1;">نجم تغنى فيه الشعراء وظهوره يعلن نهاية الصيف وتحسن الجو؟</span><br><span style="color:#ffb01a;">سهيل</span>',
+'<span style="color: #7585c1;">مجموعة من الطيور المحلقة تسمى؟</span><br><span style="color:#ffb01a;">سرب</span>',
+'<span style="color: #7585c1;">اسم عين في الجنة؟</span><br><span style="color:#ffb01a;">سلسبيل</span>',
+'<span style="color: #7585c1;">من كم لون يتكون اللون الأبيض؟</span><br><span style="color:#ffb01a;">سبعة</span>',
+'<span style="color: #7585c1;">من أسماء النار؟</span><br><span style="color:#ffb01a;">سقر</span>',
+'<span style="color: #7585c1;">شجرة ذكرت في القرآن؟</span><br><span style="color:#ffb01a;">سدر</span>',
+'<span style="color: #7585c1;">لقب خالد بن الوليد؟</span><br><span style="color:#ffb01a;">سيف الله المسلول</span>',
+'<span style="color: #7585c1;">رجل فتن بني إسرائيل في غياب موسى؟</span><br><span style="color:#ffb01a;">السامري</span>',
+'<span style="color: #7585c1;">أكثر الدول الأوروبية جبالا؟</span><br><span style="color:#ffb01a;">سويسرا</span>',
+'<span style="color: #7585c1;">ما معنى كلمة نينجا اليابانية؟</span><br><span style="color:#ffb01a;">سارقون</span>',
+'<span style="color: #7585c1;">اسم من يربي الخيل ويروضه؟</span><br><span style="color:#ffb01a;">سائس</span>',
+'<span style="color: #7585c1;">دهن حيواني يوضع مع الطعام؟</span><br><span style="color:#ffb01a;">سمن</span>',
+'<span style="color: #7585c1;">وقت في الليل يحب الاستغفار فيه؟</span><br><span style="color:#ffb01a;">سحر</span>',
+'<span style="color: #7585c1;">شركة استمدت شعارها من شبح؟</span><br><span style="color:#ffb01a;">سناب شات</span>',
+'<span style="color: #7585c1;">نوع من الخضار ويحتوي على أعلى نسبة من الحديد؟</span><br><span style="color:#ffb01a;">سبانخ</span>',
+'<span style="color: #7585c1;">أول من كتب "بسم الله"؟</span><br><span style="color:#ffb01a;">سليمان عليه السلام</span>',
+'<span style="color: #7585c1;">كم كانت عدد الفصول عند العرب قديمًا؟</span><br><span style="color:#ffb01a;">٦ فصول</span>',
+'<span style="color: #7585c1;">في التجويد، قطع الكلمة عما بعدها ثم متابعة القراءة من غير قطع النفس؟</span><br><span style="color:#ffb01a;">سكتة</span>',
+'<span style="color: #7585c1;">شريك الرسول ﷺ في التجارة وقال عنه الرسول ﷺ: "نِعْمَ الشَّرِيكُ، كَانَ لَا يُشَارِي وَلَا يُمَارِي"؟</span><br><span style="color:#ffb01a;">السائب بن أبي السائب</span>',
+'<span style="color: #7585c1;">كم فقرة تحتوي عليها رقبة الإنسان؟</span><br><span style="color:#ffb01a;">سبع فقرات</span>',
+'<span style="color: #7585c1;">بمعنى مصباح؟</span><br><span style="color:#ffb01a;">سراج</span>',
+'<span style="color: #7585c1;">حيوان له ذنب طويل، كثيف الشعر يتخذ من جلده فراء حسنة ثمينة؟</span><br><span style="color:#ffb01a;">سنجاب</span>',
+'<span style="color: #7585c1;">أحد فصائل القرود؟</span><br><span style="color:#ffb01a;">سعدان</span>',
+'<span style="color: #7585c1;">الممثل الدبلوماسي لدولة ما في دولة مضيفة؟</span><br><span style="color:#ffb01a;">سفير</span>',
+'<span style="color: #7585c1;">من الثدييات المتوحشة الآكلة للحوم وذكرت في القرآن؟</span><br><span style="color:#ffb01a;">سبع</span>',
+'<span style="color: #7585c1;">قطعة مستطيلة من المعدن مصبوبة كالقضبان وتكون من الذهب أو الفضة؟</span><br><span style="color:#ffb01a;">سبيكة</span>',
+'<span style="color: #7585c1;">عالم نحوي مسلم ذو أصل فارسي يعد من أوسع النحاة شهرة؟</span><br><span style="color:#ffb01a;">سيبويه</span>',
+'<span style="color: #7585c1;">لاعب عربي سعودي كان هدفه في مرمى بلجيكا أحد أجمل ١٠ أهداف في مونديال ٩٤؟</span><br><span style="color:#ffb01a;">سعيد العويران</span>',
+'<span style="color: #7585c1;">ما يطلق على وصف المشاهد وحوار الشخصيات في العمل السينمائي؟</span><br><span style="color:#ffb01a;">سيناريو</span>',
+'<span style="color: #7585c1;">كلمة واحدة تقال لجريد النخل؟</span><br><span style="color:#ffb01a;">سعف</span>',
+'<span style="color: #7585c1;">مدينة في شمال المملكة العربية السعودية؟</span><br><span style="color:#ffb01a;">سكاكا</span>',
+'<span style="color: #7585c1;">ما هي عاصمة سنغافورة؟</span><br><span style="color:#ffb01a;">سنغافورة</span>',
+'<span style="color: #7585c1;">من الأمور الخمسة التي استثر الله بعلمها هو علم؟</span><br><span style="color:#ffb01a;">الساعة</span>',
+'<span style="color: #7585c1;">عشرة من المسلمين بشروا بالجنة من كان آخر من مات منهم؟</span><br><span style="color:#ffb01a;">سعد بن أبي وقاص</span>',
+'<span style="color: #7585c1;">لفظ في القرآن بمعنى رقيق الديباج أو الحرير؟</span><br><span style="color:#ffb01a;">سندس</span>',
+'<span style="color: #7585c1;">من هو الصحابي الذي أشار على رسول الله بحفر الخندق في غزوة الأحزاب؟</span><br><span style="color:#ffb01a;">سلمان الفارسي رضي الله عنه</span>',
+'<span style="color: #7585c1;">حاول قتل الرسول ﷺ في طريق الهجرة ووعده الرسول ﷺ بسوار كسرى؟</span><br><span style="color:#ffb01a;">سراقة بن مالك رضي الله عنه</span>',
+'<span style="color: #7585c1;">من هي أول شهيدة في الإسلام؟</span><br><span style="color:#ffb01a;">سمية بنت الخياط</span>',
+'<span style="color: #7585c1;">رجل فتن بنو اسرائيل في غياب موسى عليه السلام ؟</span><br><span style="color:#ffb01a;"> السامري </span>',
+'<span style="color: #7585c1;"> كم عدد المواضع التي اقسم الله بنفسه في القرآن؟</span><br><span style="color:#ffb01a;"> سبعة </span>',
+'<span style="color: #7585c1;">كم عدد السور التي افتتحت بـ ( طسم )؟</span><br><span style="color:#ffb01a;">سورتان</span>',
+'<span style="color: #7585c1;">جزء من سبعة أجزاء؟</span><br><span style="color:#ffb01a;">سبع</span>',
+'<span style="color: #7585c1;">من أسماء جهنم وبئس المصير ذكرت في سورة المدثر؟</span><br><span style="color:#ffb01a;">سقر</span>'      
+      ],
+
+ // حرف ش
+    M: [
+'<span style="color: #7585c1;">من المحرمات فيها مناصرة للظالم وهضم لحق المظلوم وتضليل القضاء للحصول على شيء لا يستحقه؟</span><br><span style="color:#ffb01a;">شهادة الزور</span>',
+'<span style="color: #7585c1;">مشروب صيني المنشأ؟</span><br><span style="color:#ffb01a;">شاي</span>',
+'<span style="color: #7585c1;">شي في العين؟</span><br><span style="color:#ffb01a;">شبكية</span>',
+'<span style="color: #7585c1;">نبات عشبي حُبَيبي؟</span><br><span style="color:#ffb01a;">شعير</span>',
+'<span style="color: #7585c1;">العرق النابض يحمل الدم من القلب الى الجسد؟</span><br><span style="color:#ffb01a;">شريان</span>',
+'<span style="color: #7585c1;">صفة كان العرب يتصفون بها؟</span><br><span style="color:#ffb01a;">شهامة</span>',
+'<span style="color: #7585c1;">التوسط للغير يجلب منفعة له او دفع مضرة عنه؟</span><br><span style="color:#ffb01a;">شفاعة</span>',
+'<span style="color: #7585c1;">القطع الصغيرة المتطايرة من القنبلة؟</span><br><span style="color:#ffb01a;">شظايا</span>',
+'<span style="color: #7585c1;">اضعف حاسة عند الطيور؟</span><br><span style="color:#ffb01a;">شم</span>',
+'<span style="color: #7585c1;">يطلق على البخيل الحريص على المال؟</span><br><span style="color:#ffb01a;">شحيح</span>',
+'<span style="color: #7585c1;">جدول الماء المتساقط من مستوى مرتفع الى مستوى منخفض؟</span><br><span style="color:#ffb01a;">شلال</span>',
+'<span style="color: #7585c1;">احد مراحل تطور الدودة في خلقتها؟</span><br><span style="color:#ffb01a;">شرنقة</span>',
+'<span style="color: #7585c1;">عادة عند بعض الناس تصدر منهم عند نومهم بغير ارادتهم؟</span><br><span style="color:#ffb01a;">شخير</span>',
+'<span style="color: #7585c1;">طائر من الجوارح من فصيلة الصقور؟</span><br><span style="color:#ffb01a;">شاهين</span>',
+'<span style="color: #7585c1;">من مراتب الحب؟</span><br><span style="color:#ffb01a;">شغف</span>',
+'<span style="color: #7585c1;">الامارة الوحيدة في دولة الامارات التي لها حدود مع جميع الامارات؟</span><br><span style="color:#ffb01a;">شارقة</span>',
+'<span style="color: #7585c1;">ما هو اذكى الحيوانات؟</span><br><span style="color:#ffb01a;">شمبانزي</span>',
+'<span style="color: #7585c1;">رياضة ذهنية اخترعها الهنود ونقلها العرب الى الاندلس؟</span><br><span style="color:#ffb01a;">شطرنج</span>',
+'<span style="color: #7585c1;">اكمل “ اهل مكة ادرى ب ..”؟</span><br><span style="color:#ffb01a;">شعابها</span>',
+'<span style="color: #7585c1;">الى اين كانت رحلة الصيف لقريش؟</span><br><span style="color:#ffb01a;">الشام</span>',
+'<span style="color: #7585c1;">الحمرة التي تكون بعد مغيب الشمس؟</span><br><span style="color:#ffb01a;">الشفق الاحمر</span>',
+'<span style="color: #7585c1;">الزرع والنبات والاغصان الصغيرة؟</span><br><span style="color:#ffb01a;">شتلات</span>',
+'<span style="color: #7585c1;">في الفيزياء: حزمة دقيقة من الضوء تنطلق باستقامة واحدة من مصدر الضوء؟</span><br><span style="color:#ffb01a;">شعاع</span>',
+'<span style="color: #7585c1;">عملة اليهود في أرض فلسطين؟</span><br><span style="color:#ffb01a;">شيكل</span>',
+'<span style="color: #7585c1;">امرأة حكمت مصر ٨٠ يوما بعد وفاة زوجها؟</span><br><span style="color:#ffb01a;">شجرة الدر</span>',
+'<span style="color: #7585c1;">هو الخصام و القطيعة بين فرد أو جماعة أخرى؟</span><br><span style="color:#ffb01a;">شقاق</span>',
+'<span style="color: #7585c1;">ما يستعمل لتثبيت الشموع فيه للزينة؟</span><br><span style="color:#ffb01a;">شمعدان</span>',
+'<span style="color: #7585c1;">نبات جذره احمر غامق غليظ او ابيض و يستخرج منه السكر؟</span><br><span style="color:#ffb01a;">شمندر</span>',
+'<span style="color: #7585c1;">سورة من القرآن تمت تسميتها على اسم نجم من النجوم، فما هي؟</span><br><span style="color:#ffb01a;">الشمس</span>',
+'<span style="color: #7585c1;">هي الاخت من الام والاب؟</span><br><span style="color:#ffb01a;">شقيقة</span>',
+'<span style="color: #7585c1;">الجماعة القليلة من الناس .. وقد ورد ذكرها في القرآن؟</span><br><span style="color:#ffb01a;">شرذمة</span>',
+'<span style="color: #7585c1;">الجزء الاول من بيت الشعر او الجزء الثاني فيه؟</span><br><span style="color:#ffb01a;">شطر</span>',
+'<span style="color: #7585c1;">ماذا يطلق على المرأة التي غلب الشيب شعرها ؟</span><br><span style="color:#ffb01a;">شمطاء</span>',
+'<span style="color: #7585c1;">من الحكم -من تداوى بدائه لم يصل الى ..- ؟</span><br><span style="color:#ffb01a;">شفائه</span>',
+'<span style="color: #7585c1;">عن معاذ رضي الله عنه قال سمعت رسول الله ﷺ يقول قال اللهُ “المتحابون في جلالي لهم منابر من نور، يغبطهم النبيون و . .“؟</span><br><span style="color:#ffb01a;">الشهداءُ</span>',
+'<span style="color: #7585c1;">لقب يطلق على البخاري ومسلم؟</span><br><span style="color:#ffb01a;">الشيخان</span>',   
+      ],
+
+ // حرف ص
+    N: [
+'<span style="color: #7585c1;">ولا طعام إلا من غسلين" ما معنى غسلين ؟</span><br><span style="color:#ffb01a;">صديد أهل النار</span>',
+'<span style="color: #7585c1;">مهر الزوجة ؟</span><br><span style="color:#ffb01a;">صداق</span>',
+'<span style="color: #7585c1;">عكس الوارد ؟</span><br><span style="color:#ffb01a;">صادر</span>',
+'<span style="color: #7585c1;">اليهودية التي اسلمت وتزوجها الرسول ﷺ؟</span><br><span style="color:#ffb01a;">صفية بنت حي بنت اخطب</span>',
+'<span style="color: #7585c1;">جهاز يقوم بتسجيل كافة المعطيات خلال الرحلات الجوية ؟</span><br><span style="color:#ffb01a;">الصندوق الاسود</span>',
+'<span style="color: #7585c1;">من اخوات كان ترفع المبتدأ وتنصب الخبر ؟</span><br><span style="color:#ffb01a;">صار</span>',
+'<span style="color: #7585c1;">اهلك الله قوم ثمود ب ؟</span><br><span style="color:#ffb01a;">الصيحة</span>',
+'<span style="color: #7585c1;">لفظ ورد في القران تعني منهاج الله وطريقته ؟</span><br><span style="color:#ffb01a;">صبغة</span>',
+'<span style="color: #7585c1;">هو الشهرة والسمعة والذكر بين الناس ؟</span><br><span style="color:#ffb01a;">صيت</span>',
+'<span style="color: #7585c1;">ظاهرة اصطدام الصوت بحاجز ثم رجوعه مرة اخرى ؟</span><br><span style="color:#ffb01a;">صدى</span>',
+'<span style="color: #7585c1;">نوع من انواع الاخشاب غالية الثمن ؟</span><br><span style="color:#ffb01a;">صندل</span>',
+'<span style="color: #7585c1;">سورة يطلق عليها سورة داود ؟</span><br><span style="color:#ffb01a;">ص</span>',
+'<span style="color: #7585c1;">في اللغة ضد الفاسد وهو المستقيم المؤدي لواجباته ؟</span><br><span style="color:#ffb01a;">صالح</span>',
+'<span style="color: #7585c1;">ماهي اكثر دوله سكانا في العالم ؟</span><br><span style="color:#ffb01a;">صين</span>',
+'<span style="color: #7585c1;">يدخل من باب الريان ؟</span><br><span style="color:#ffb01a;">الصائم</span>',
+'<span style="color: #7585c1;">هي الموضة التي تنتشر في اوساط المجتمع ؟</span><br><span style="color:#ffb01a;">صيحة</span>',
+'<span style="color: #7585c1;">صوت الباب ؟</span><br><span style="color:#ffb01a;">صرير</span>',
+'<span style="color: #7585c1;">صوت القلم اثناء الكتابة ؟</span><br><span style="color:#ffb01a;">صرير</span>',
+'<span style="color: #7585c1;">مهنة جمع الاخبار وابداء الرأي فيها وتقديمها الى الناس ؟</span><br><span style="color:#ffb01a;">صحافة</span>',
+'<span style="color: #7585c1;">معدن يستخرج من البحار ؟</span><br><span style="color:#ffb01a;">صوديوم</span>',
+'<span style="color: #7585c1;">ماذا ينتج عند تفاعل مادة صلبه مع الاكسجين في وجود الهواء ؟</span><br><span style="color:#ffb01a;">صدأ</span>',
+'<span style="color: #7585c1;">شجر من الفصيلة المخروطية يزرع لخشبه وللزِّينة، ولبعض أنواعه بذور صغيرة لذيذة الطَّعم؟</span><br><span style="color:#ffb01a;">صنوبر</span>',
+'<span style="color: #7585c1;">مطابقة الكلام للواقع ؟</span><br><span style="color:#ffb01a;">صدق</span>',
+'<span style="color: #7585c1;">شي يأخذونه منك ويشوفونه قبلك ؟</span><br><span style="color:#ffb01a;">صورة</span>',
+'<span style="color: #7585c1;">ماهي عاصمة اليمن ؟</span><br><span style="color:#ffb01a;">صنعاء</span>',
+'<span style="color: #7585c1;">يطلق على من ثبت انه رأى رسول الله ﷺ ولو مره واحدة في حياته واتبعه ؟</span><br><span style="color:#ffb01a;">صحابي</span>',
+'<span style="color: #7585c1;">حجر كانت تستخدمه العرب قديما لإشعال النار إذا ضرب بعضه ببعض ؟</span><br><span style="color:#ffb01a;">صوان</span>',
+'<span style="color: #7585c1;">هو الجزء م بين العين و الأذن ؟</span><br><span style="color:#ffb01a;">صدغ</span>',
+'<span style="color: #7585c1;">الاسم الذي يطلق على معبد اليهود قديما ؟</span><br><span style="color:#ffb01a;">صومعة</span>',
+'<span style="color: #7585c1;">من اداب الاسلام وتكون بالاحسان الى الاقارب ؟</span><br><span style="color:#ffb01a;">صلة الرحم</span>',
+'<span style="color: #7585c1;"> ماهو عقاب بني إسرائيل عندما طلبوا من موسى عليه السلام أن يروا الله جهرة ؟</span><br><span style="color:#ffb01a;">صاعقة</span>',
+'<span style="color: #7585c1;">اسم يطلق على مصر العليا والبلاد والواقعة جنوب القاهره حتى شلالات اسوان ؟</span><br><span style="color:#ffb01a;">الصعيد</span>',
+'<span style="color: #7585c1;"> عامود في اعلى السفينة يرفع عليه الشعار او العلم ؟</span><br><span style="color:#ffb01a;">صاري</span>',
+'<span style="color: #7585c1;">عملية مبالة النقود بنقود ؟</span><br><span style="color:#ffb01a;">صرافة</span>',
+'<span style="color: #7585c1;">اسم حقبة من التاريخ الاسلامي تبدأ بعهد الرسولﷺ حتى نهاية عهد الخلفاء الراشدين؟</span><br><span style="color:#ffb01a;">صدر الاسلام </span>',
+'<span style="color: #7585c1;"> أين صعد الرسول صلى الله عليه وسلم عند الجهر بالدعوة ليدعوا القبائل للإسلام؟</span><br><span style="color:#ffb01a;">الصفا</span>',
+'<span style="color: #7585c1;">قال رسول الله ﷺ "إذا أنفق الرجل على أهله نفقة يحتسبها فهي له .."؟</span><br><span style="color:#ffb01a;">صدقة</span>',
+'<span style="color: #7585c1;">ما هما الجبلين اللذين ذكر أسمائهم في القرآن الكريم في آية واحدة؟</span><br><span style="color:#ffb01a;">الصفا والمروة</span>',
+'<span style="color: #7585c1;"> اول طريقة عرفها الانسان للحصول على غذائه وكسائه ؟</span><br><span style="color:#ffb01a;">الصيد</span>'      
+      ],
+
+ // حرف ض
+    O: [
+    '<span style="color: #7585c1;">نبات ذكره الله في سورة الغاشية قال عنه “لا يسمن ولا يغني من جوع“؟</span><br><span style="color:#ffb01a;">ضريع</span>',
+'<span style="color: #7585c1;">ما هو الفعل التفاؤلي التي عملته زوجة أبراهيم وورد ذكره في القرآن؟</span><br><span style="color:#ffb01a;">الضحك</span>',
+'<span style="color: #7585c1;">من معجزات نبي الله موسى؟</span><br><span style="color:#ffb01a;">الضفادع</span>',
+'<span style="color: #7585c1;">ما هي علامة الرفع الأصلية؟</span><br><span style="color:#ffb01a;">ضمة</span>',
+'<span style="color: #7585c1;">يطلق على الاصوات العالية المزعجة؟</span><br><span style="color:#ffb01a;">ضجيج</span>',
+'<span style="color: #7585c1;">هو بخار الماء الكثيف؟</span><br><span style="color:#ffb01a;">ضباب</span>',
+'<span style="color: #7585c1;">مرادف اعمى؟</span><br><span style="color:#ffb01a;">ضرير</span>',
+'<span style="color: #7585c1;">وظيفة القلب الاساسية في الجسم؟</span><br><span style="color:#ffb01a;">ضخ الدم</span>',
+'<span style="color: #7585c1;">تمتاز فيها مدينة لندن؟</span><br><span style="color:#ffb01a;">ضباب</span>',
+'<span style="color: #7585c1;">كلمة مرادفة للحقد؟</span><br><span style="color:#ffb01a;">ضغينة</span>',
+'<span style="color: #7585c1;">هي الحاجة او الشدة التي لا مدفع لها؟</span><br><span style="color:#ffb01a;">ضرورة</span>',
+'<span style="color: #7585c1;">سرعته ١٨٦ ألف ميل في الثانية؟</span><br><span style="color:#ffb01a;">ضوء</span>',
+'<span style="color: #7585c1;">عملية اساسية في الحساب والجبر؟</span><br><span style="color:#ffb01a;">ضرب</span>',
+'<span style="color: #7585c1;">سورة سميت باسم وقت؟</span><br><span style="color:#ffb01a;">الضحى</span>',
+'<span style="color: #7585c1;">ما هو الشيء الذي يؤنب الانسان على فعل خطأ في نفسه؟</span><br><span style="color:#ffb01a;">ضمير</span>',
+'<span style="color: #7585c1;">من أسماء الأسد مكون من أربعة حروف؟</span><br><span style="color:#ffb01a;">ضيغم</span>',
+'<span style="color: #7585c1;">هي شاطئ البحر وساحله؟</span><br><span style="color:#ffb01a;">ضفة</span>',
+'<span style="color: #7585c1;">ما هو الحيوان الذي لا يتنفس وفمه مفتوح؟</span><br><span style="color:#ffb01a;">الضفدع</span>',
+'<span style="color: #7585c1;">لقب يطلق على حجاج بيت الله الحرام؟</span><br><span style="color:#ffb01a;">ضيوف الرحمن</span>',
+'<span style="color: #7585c1;">هي عظم مستطيل من عظام الجنب منحني؟</span><br><span style="color:#ffb01a;">ضلع</span>'     
+      ],
+
+ // حرف ط
+    P: [
+    '<span style="color: #7585c1;">مجموعة من الكتابات عبارة عن خطوط وأعداد غير مفهومة؟</span><br><span style="color:#ffb01a;">طلاسم</span>',
+'<span style="color: #7585c1;">ما الذي تقاس قوته على مقياس سكوفيل؟</span><br><span style="color:#ffb01a;">الطعام الحار</span>',
+'<span style="color: #7585c1;">ما يطلق على النباتات أو الحيوانات التي تعيش على غيرها؟</span><br><span style="color:#ffb01a;">طفيليات</span>',
+'<span style="color: #7585c1;">من المعجزات التي أيد الله بها نوح عليه السلام؟</span><br><span style="color:#ffb01a;">طوفان</span>',
+'<span style="color: #7585c1;">ابغض الحلال؟</span><br><span style="color:#ffb01a;">طلاق</span>',
+'<span style="color: #7585c1;">جبل أقسم الله تعالى به في القرآن؟</span><br><span style="color:#ffb01a;">الطور</span>',
+'<span style="color: #7585c1;">ماذا يطلق على حالة الجو؟</span><br><span style="color:#ffb01a;">الطقس</span>',
+'<span style="color: #7585c1;">أين كلم الله تعالى نبيه موسى؟</span><br><span style="color:#ffb01a;">طور سيناء</span>',
+'<span style="color: #7585c1;">عضو في جسم الإنسان ينقي الدم من المواد غير الضرورية مثل خلايا الدم القديمة أو التالفة؟</span><br><span style="color:#ffb01a;">طحال</span>',
+'<span style="color: #7585c1;">ملك ملكه الله لبني إسرائيل وذكر في القرآن؟</span><br><span style="color:#ffb01a;">طالوت</span>',
+'<span style="color: #7585c1;">ما هو الموت الأسود؟</span><br><span style="color:#ffb01a;">طاعون</span>',
+'<span style="color: #7585c1;">ما يقال لضحك وادخال البهجة على الآخرين؟</span><br><span style="color:#ffb01a;">طرفة</span>',
+'<span style="color: #7585c1;">من أسماء يوم القيامة؟</span><br><span style="color:#ffb01a;">الطامة</span>',
+'<span style="color: #7585c1;">مجموعة من الأشعة الملونة تظهر بعد نزول الأمطار؟</span><br><span style="color:#ffb01a;">طيف الرحمن</span>',
+'<span style="color: #7585c1;">ما هو الطائر صاحب أصغر بيضة من بين الطيور؟</span><br><span style="color:#ffb01a;">الطنان</span>',
+'<span style="color: #7585c1;">ما عبد من غير الله تعالى؟</span><br><span style="color:#ffb01a;">طاغوت</span>',
+'<span style="color: #7585c1;">كبير بالعمر؟</span><br><span style="color:#ffb01a;">طاعن</span>',
+'<span style="color: #7585c1;">وزن للأثقال يقدر بألف كيلو جرام؟</span><br><span style="color:#ffb01a;">طن</span>',
+'<span style="color: #7585c1;">الخضرة التي تعلو الماء الراكد؟</span><br><span style="color:#ffb01a;">طحالب</span>',
+'<span style="color: #7585c1;">ما هو اللقب الذي لقب به جعفر بن أبي طالب؟</span><br><span style="color:#ffb01a;">الطيار</span>',
+'<span style="color: #7585c1;">جهاز يستخدم قوة الرياح لتوليد الكهرباء؟</span><br><span style="color:#ffb01a;">طاحونة الهواء</span>',
+'<span style="color: #7585c1;">ورد في القرآن الكريم ذكر اللحية، فاذكر اسم السورة؟</span><br><span style="color:#ffb01a;">طه</span>',
+'<span style="color: #7585c1;">مدينة لبنانية وميناء مهم تشتهر ببساتين الزيتون وفيها معمل لتكرير البترول؟</span><br><span style="color:#ffb01a;">طرابلس</span>',
+'<span style="color: #7585c1;">ما هي أكبر مدينة في آسيا؟</span><br><span style="color:#ffb01a;">طوكيو</span>',
+'<span style="color: #7585c1;">أول باب في كتب الفقه؟</span><br><span style="color:#ffb01a;">الطهارة</span>',
+'<span style="color: #7585c1;">صوت النحل أو الذبابة عند طيرانها؟</span><br><span style="color:#ffb01a;">طنين</span>',
+'<span style="color: #7585c1;">قسم من الفقاريات البائضة ذوات الدم الحار التي تحورت أفرادها الأمامية إلى أجنحة وتحور الفم إلى منقار؟</span><br><span style="color:#ffb01a;">طيور</span>',
+'<span style="color: #7585c1;">اسم المقذوفات التي تخرج من فوهة الأسلحة عند استخدامها؟</span><br><span style="color:#ffb01a;">طلقة</span>'      
+      ],
+
+ // حرف ظ
+    Q: [
+    '<span style="color: #7585c1;">يدخل فيها المتحابون في الله يوم القيامة؟</span><br><span style="color:#ffb01a;">ظل عرش الرحمن</span>',
+'<span style="color: #7585c1;">ما الشيء المشار إليه في الآية الكريمة "وَلَوْ شَاءَ لَجَعَلَهُ سَاكِنًا ثُمَّ جَعَلْنَا الشَّمْسَ عَلَيْهِ دَلِيلًا"؟</span><br><span style="color:#ffb01a;">الظل</span>',
+'<span style="color: #7585c1;">اكمل "ما حك جلدك مثل .."؟</span><br><span style="color:#ffb01a;">ظفرك</span>',
+'<span style="color: #7585c1;">من أخوات كان ترفع المبتدأ وتنصب الخبر؟</span><br><span style="color:#ffb01a;">ظل</span>',
+'<span style="color: #7585c1;">الشعر عندما يصف بعضه حول بعض؟</span><br><span style="color:#ffb01a;">ظفائر</span>',
+'<span style="color: #7585c1;">ما معنى كلمة ديجور؟</span><br><span style="color:#ffb01a;">ظلام</span>',
+'<span style="color: #7585c1;">بمعنى دام واستمر؟</span><br><span style="color:#ffb01a;">ظل</span>',
+'<span style="color: #7585c1;">نهى الله عنه وقال أن بعضه إثم؟</span><br><span style="color:#ffb01a;">الظن</span>',
+'<span style="color: #7585c1;">بماذا وصف نبي الله يونس نفسه في بطن الحوت؟</span><br><span style="color:#ffb01a;">الظالمين</span>',
+'<span style="color: #7585c1;">هو الجلد الميت النابت من جسم الإنسان يتم التخلص منه دوريًا؟</span><br><span style="color:#ffb01a;">الظفر</span>',
+'<span style="color: #7585c1;">هو يوم العذاب الذي أصاب قوم شعيب؟</span><br><span style="color:#ffb01a;">الظلة</span>',
+'<span style="color: #7585c1;">بمعنى فاز ونجح في تحصيله؟</span><br><span style="color:#ffb01a;">ظفر</span>'     
+      ],
+
+ // حرف ع    
+    R: [
+'<span style="color: #7585c1;">فيمن نزل قول الله تعالى: (مَن كَفَرَ بِاللَّهِ مِن بَعْدِ إِيمَانِهِ إِلَّا مَنْ أُكْرِهَ وَقَلْبُهُ مُطْمَئِنٌّ بِالْإِيمَانِ)؟</span><br><span style="color:#ffb01a;">عمار بن ياسر</span>',
+'<span style="color: #7585c1;">من الفواسق الخمس التي تقتل في الحل والحرم؟</span><br><span style="color:#ffb01a;">العقرب</span>',
+'<span style="color: #7585c1;">قالَ رسولُ اللهِ ﷺ: عُودُوا المَرِيضَ، وَأَطْعِمُوا الجَائعَ، وفَكُّوا ..</span><br><span style="color:#ffb01a;">العاني</span>',
+'<span style="color: #7585c1;">بطل من حكايات الف ليلة وليلة وفق في الحصول على مصباح وخاتم؟</span><br><span style="color:#ffb01a;">علاء الدين</span>',
+'<span style="color: #7585c1;">طائر لا يتمتع بحاستي الذوق والسمع؟</span><br><span style="color:#ffb01a;">عصفور</span>',
+'<span style="color: #7585c1;">قالوا "درهم وقاية خير من قنطار .."؟</span><br><span style="color:#ffb01a;">علاج</span>',
+'<span style="color: #7585c1;">فجرت ١٢ عينًا؟</span><br><span style="color:#ffb01a;">عصا موسى عليه السلام</span>',
+'<span style="color: #7585c1;">اكمل " نوم الظالم ..."</span><br><span style="color:#ffb01a;">عبادة</span>',
+'<span style="color: #7585c1;">يؤخذ من الفيل ويصنع منه أشياء ثمينة؟</span><br><span style="color:#ffb01a;">عاج</span>',
+'<span style="color: #7585c1;">حشرة سميت سورة باسمها؟</span><br><span style="color:#ffb01a;">عنكبوت</span>',
+'<span style="color: #7585c1;">لغة اليهود؟</span><br><span style="color:#ffb01a;">العبرية</span>',
+'<span style="color: #7585c1;">أصغر أنواع الفراشات؟</span><br><span style="color:#ffb01a;">عثة المنازل</span>',
+'<span style="color: #7585c1;">ما هو اسم بيت الأسد؟</span><br><span style="color:#ffb01a;">عرين</span>',
+'<span style="color: #7585c1;">بعث الله لهم نبيه هود؟</span><br><span style="color:#ffb01a;">قوم عاد</span>',
+'<span style="color: #7585c1;">سوق كان يتناظر فيه الشعراء قبل الإسلام؟</span><br><span style="color:#ffb01a;">عكاظ</span>',
+'<span style="color: #7585c1;">ما هو أصغر الكواكب؟</span><br><span style="color:#ffb01a;">عطارد</span>',
+'<span style="color: #7585c1;">صلاة يطلق عليها صلاة العتمة؟</span><br><span style="color:#ffb01a;">عشاء</span>',
+'<span style="color: #7585c1;">الأمر الذي يفعله الشخص تلقائيًا؟</span><br><span style="color:#ffb01a;">عادة</span>',
+'<span style="color: #7585c1;">ماذا يسمى ما يذبح للمولود عند ولادته؟</span><br><span style="color:#ffb01a;">عقيقة</span>',
+'<span style="color: #7585c1;">صوت الذئب؟</span><br><span style="color:#ffb01a;">عواء</span>',
+'<span style="color: #7585c1;">المرأة التي لم تتزوج؟</span><br><span style="color:#ffb01a;">عذراء</span>',
+'<span style="color: #7585c1;">صفة تعطى للهواء المنعش اللطيف؟</span><br><span style="color:#ffb01a;">عليل</span>',
+'<span style="color: #7585c1;">ماذا يسمى ذكر الضفدع؟</span><br><span style="color:#ffb01a;">علجوم</span>',
+'<span style="color: #7585c1;">تقسيم البشرية على أساس باطل من بعض المعايير كلون البشرة ونوع الشعر واللغة والعائلة والبلد؟</span><br><span style="color:#ffb01a;">عنصرية</span>',
+'<span style="color: #7585c1;">أصغر إمارات دولة الإمارات من حيث المساحة؟</span><br><span style="color:#ffb01a;">عجمان</span>',
+'<span style="color: #7585c1;">في اللغة ما يطلق على صوت الباكي؟</span><br><span style="color:#ffb01a;">عويل</span>',
+'<span style="color: #7585c1;">أول من بنى دارًا عربية لصناعة السفن هو معاوية بن أبي سفيان وكان ذلك في مدينة فلسطينية، ما هي؟</span><br><span style="color:#ffb01a;">عكة</span>',
+'<span style="color: #7585c1;">وحدة اجتماعية ينحدر جميع أعضائها من جد واحد ويتمسكون بنفس المبادئ والعادات وهي مجموعات فرعيةاو جزء اصغر من القبائل.؟</span><br><span style="color:#ffb01a;">عشيرة</span>',
+'<span style="color: #7585c1;">من هو أول صحابي ولد في الإسلام؟</span><br><span style="color:#ffb01a;">عبد الله بن عمر بن الخطاب رضي الله عنهم</span>',
+'<span style="color: #7585c1;">من هو الصحابي الذي هاجر إلى المدينة جهرًا؟</span><br><span style="color:#ffb01a;">عمر بن الخطاب</span>',
+'<span style="color: #7585c1;">هي التكاليف التي أمر الله بها العباد للتقرب إليه ولا تطلب إلا من البالغ العاقل؟</span><br><span style="color:#ffb01a;">عبادة</span>',
+'<span style="color: #7585c1;">كان وجيهًا في قومه ومن العلماء الصالحين، رزقه الله تعالى بابنته مريم أم عيسى عليه السلام؟</span><br><span style="color:#ffb01a;">عمران</span>',
+'<span style="color: #7585c1;">سيف من سيوف الرسول ﷺ أهداه له سعد بن عباده رضي الله عنه؟</span><br><span style="color:#ffb01a;">عضب</span>',
+'<span style="color: #7585c1;">خيوط منتشرة في الجسم كله وبها تكون الحركة والحس؟</span><br><span style="color:#ffb01a;">عصب</span>',
+'<span style="color: #7585c1;">عظمة في العمود الفقري؟</span><br><span style="color:#ffb01a;">عصعص</span>',
+'<span style="color: #7585c1;">الوسط الذي لا تمر فيه الكهرباء أو الحرارة؟</span><br><span style="color:#ffb01a;">عازل</span>',
+'<span style="color: #7585c1;">افراز مائي من الجسم يحتوي على ٣٥ بالمئة من كروليد الصوديوم وقليل من البولينا تفرزه غدد خاصه تحت سطح الجلد؟</span><br><span style="color:#ffb01a;">عرق</span>',
+'<span style="color: #7585c1;">مخترع أندلسي أول من حاول أن يطير بجناحين؟</span><br><span style="color:#ffb01a;">عباس بن فرناس</span>',
+'<span style="color: #7585c1;">من النبي الذي طلب منه قومه أن ينزل لهم مائدة من السماء؟</span><br><span style="color:#ffb01a;">عيسى عليه السلام</span>',
+'<span style="color: #7585c1;">من أقصر سور القرآن تنتهي آياتها بحرف الراء؟</span><br><span style="color:#ffb01a;">العصر</span>'      
+      ],
+
+ // حرف غ    
+    S: [
+'<span style="color: #7585c1;">من الشعوب الأوروبية اشتهروا بالمشردين والأميين ولهم لغة خاصة بهم ويمارسون الحرف اليدوية؟</span><br><span style="color:#ffb01a;">غجر</span>',
+'<span style="color: #7585c1;">ماهي الأنفال؟</span><br><span style="color:#ffb01a;">الغنائم</span>',
+'<span style="color: #7585c1;">أنسجة مرنة مثبِتة تكون جزءًا من جهاز التدعيم أو الهيكل العظمي؟</span><br><span style="color:#ffb01a;">غضروف</span>',
+'<span style="color: #7585c1;">صوت يخرج من الخيشوم، يخرج عند نطق النون والميم؟</span><br><span style="color:#ffb01a;">غنة</span>',
+'<span style="color: #7585c1;">من أسماء الأسد؟</span><br><span style="color:#ffb01a;">غضنفر</span>',
+'<span style="color: #7585c1;">إذا لم ير القوم الهلال قالوا؟</span><br><span style="color:#ffb01a;">غم الهلال</span>',
+'<span style="color: #7585c1;">أكمل المثل "السهران ليله طويل والنائم ليله ..."؟</span><br><span style="color:#ffb01a;">غمضة</span>',
+'<span style="color: #7585c1;">خلق يحث عليه ديننا الحنيف؟</span><br><span style="color:#ffb01a;">غض البصر</span>',
+'<span style="color: #7585c1;">ما أخذ من الأعداء عن طريق الحرب؟</span><br><span style="color:#ffb01a;">غنيمة</span>',
+'<span style="color: #7585c1;">من الفواسق الخمس التي تقتل في الحل والحرم؟</span><br><span style="color:#ffb01a;">الغراب</span>',
+'<span style="color: #7585c1;">ينزع من صدور الناس عندما يدخلون الجنة ويكونون على سرر متقابلين؟</span><br><span style="color:#ffb01a;">غل</span>',
+'<span style="color: #7585c1;">سورة تطلق عليها سورة المؤمن؟</span><br><span style="color:#ffb01a;">غافر</span>',
+'<span style="color: #7585c1;">كلمة مرادفة للخيانة ونقض العهد ؟</span><br><span style="color:#ffb01a;">غدر</span>',
+'<span style="color: #7585c1;">ماذا يطلق على ما تشعب من ساق الشجرة دقائقها وغلاظها؟</span><br><span style="color:#ffb01a;">غصن</span>',
+'<span style="color: #7585c1;">يطلق على ذكر السلحفاة؟</span><br><span style="color:#ffb01a;">غيلم</span>',
+'<span style="color: #7585c1;">بمعنى فقد الوعد واغمى عليه؟</span><br><span style="color:#ffb01a;">غشي عليه</span>',
+'<span style="color: #7585c1;">مادة توجد بين العظام وظيفتها حماية العظام من الاحتكاك؟</span><br><span style="color:#ffb01a;">غضاريف</span>',
+'<span style="color: #7585c1;">دولة أفريقية تتكلم الإسبانية؟</span><br><span style="color:#ffb01a;">غينيا</span>',
+'<span style="color: #7585c1;">الأمر إذا كان مبهمًا وغير واضح، ماذا يطلق عليه؟</span><br><span style="color:#ffb01a;">غامض</span>',
+'<span style="color: #7585c1;">التكبر في العلو والسلوك؟</span><br><span style="color:#ffb01a;">غطرسة</span>',
+'<span style="color: #7585c1;">هو السحاب الأبيض؟</span><br><span style="color:#ffb01a;">غمامة</span>',
+'<span style="color: #7585c1;">مجاوزة الحد ووضع الشيء في موضع أعلى من موضعه؟</span><br><span style="color:#ffb01a;">غلو</span>',
+'<span style="color: #7585c1;">به نماء الجسم وقوامه؟</span><br><span style="color:#ffb01a;">غذاء</span>',
+'<span style="color: #7585c1;">هو باب من أبواب الشعر، طرقه الشعراء وتغنوا به وملأوا به دواوينهم؟</span><br><span style="color:#ffb01a;">غزل</span>',
+'<span style="color: #7585c1;">لقب الصحابي الجليل حنظلة بن عامر رضي الله عنه؟</span><br><span style="color:#ffb01a;">غسيل الملائكة</span>',
+'<span style="color: #7585c1;">من أسماء يوم القيامة ورد في القرآن الكريم؟</span><br><span style="color:#ffb01a;">الغاشية</span>',
+'<span style="color: #7585c1;">هو صوت الماء المتحرك في حلق الإنسان؟</span><br><span style="color:#ffb01a;">غرغرة</span>',
+'<span style="color: #7585c1;">هو ما يكون سحيقًا وعميقًا؟</span><br><span style="color:#ffb01a;">غائر</span>',
+'<span style="color: #7585c1;">ما يطلق على الحزن الشديد أو الهم؟</span><br><span style="color:#ffb01a;">غم</span>',
+'<span style="color: #7585c1;">تحلل أنسجة الجسم وتعفنها نتيجة عدم وصول الدم إليها؟</span><br><span style="color:#ffb01a;">غرغرينا</span>',
+'<span style="color: #7585c1;">من الأعمال المحرمة التي نهانا الله عنها ووصف مقترفها بأنه يأكل لحم أخيه ميتًا؟</span><br><span style="color:#ffb01a;">الغيبة</span>',
+'<span style="color: #7585c1;">جزء من ساق الشجرة يحمل اوراقا</span><br><span style="color:#ffb01a;">غصن</span>',
+'<span style="color: #7585c1;">قال الرسول ﷺ: "الكبائر: الإشراك بالله، وعُقُوق الوالدين، وقتل النفس، واليمين ..."</span><br><span style="color:#ffb01a;">الغموس</span>'      
+      ],
+ // حرف ف
+    T: [
+    '<span style="color: #7585c1;">من الأحجار الكريمة بخلاف الفيروز</span><br><span style="color:#ffb01a;">الفسيفساء؟</span>',
+'<span style="color: #7585c1;">اخت عمر بن الخطاب رضي الله عنه اسلمت قبله وهو اسلم عندما حاول ردها؟</span><br><span style="color:#ffb01a;">فاطمة بنت الخطاب</span>',
+'<span style="color: #7585c1;">ماذا يقصد السواديين بكلمة "خشم"؟</span><br><span style="color:#ffb01a;">فم</span>',
+'<span style="color: #7585c1;">غالبًا هي عملة نحاسية.. استخدمت من فجر الإسلام وأعتقد أن هذه الكلمة مشتقة من اليونانية من كلمة "فوليس"؟</span><br><span style="color:#ffb01a;">فلس</span>',
+'<span style="color: #7585c1;">العام الذي نزل فيه الخسران على أبرهة الحبشي هو عام؟</span><br><span style="color:#ffb01a;">الفيل</span>',
+'<span style="color: #7585c1;">إلى ماذا يؤدي نقص الحديد في الجسم؟</span><br><span style="color:#ffb01a;">فقر الدم</span>',
+'<span style="color: #7585c1;">ماهي الحرب التي شارك فيها النبي في طفولته؟</span><br><span style="color:#ffb01a;">الفجار</span>',
+'<span style="color: #7585c1;">أشد من القتل؟</span><br><span style="color:#ffb01a;">فتنة</span>',
+'<span style="color: #7585c1;">من الأوقات التي أقسم بها الله عز وجل؟</span><br><span style="color:#ffb01a;">فجر</span>',
+'<span style="color: #7585c1;">من أسماء القرآن؟</span><br><span style="color:#ffb01a;">فرقان</span>',
+'<span style="color: #7585c1;">النخلة الصغيرة؟</span><br><span style="color:#ffb01a;">فسيلة</span>',
+'<span style="color: #7585c1;">تخيف الطيور؟</span><br><span style="color:#ffb01a;">فزاعة</span>',
+'<span style="color: #7585c1;">لونه أسود ولا ينتفع به إلا إذا كان أحمر؟</span><br><span style="color:#ffb01a;">فحم</span>',
+'<span style="color: #7585c1;">صوت الأفعى؟</span><br><span style="color:#ffb01a;">فحيح</span>',
+'<span style="color: #7585c1;">حيوان برمائي يلد صغاره تحت الماء؟</span><br><span style="color:#ffb01a;">فرس النهر</span>',
+'<span style="color: #7585c1;">من طرق الموت أنبأ الرسول بحدوثها بكثرة في آخر الزمان؟</span><br><span style="color:#ffb01a;">الفجأة</span>',
+'<span style="color: #7585c1;">أعلى درجات الجنة؟</span><br><span style="color:#ffb01a;">فردوس</span>',
+'<span style="color: #7585c1;">هو الخيط المتصل بالمصباح لإشعاله؟</span><br><span style="color:#ffb01a;">فتيل</span>',
+'<span style="color: #7585c1;">جلد بعض الحيوانات كالثعالب والدب؟</span><br><span style="color:#ffb01a;">فرو</span>',
+'<span style="color: #7585c1;">أين يبدأ هضم المواد الكربوهيدراتية؟</span><br><span style="color:#ffb01a;">الفم</span>',
+'<span style="color: #7585c1;">ماذا يسمى العام الذي حطم فيه المسلمون الأصنام؟</span><br><span style="color:#ffb01a;">الفتح</span>',
+'<span style="color: #7585c1;">يطلق على المال المأخوذ من الأعداء دون قتال؟</span><br><span style="color:#ffb01a;">الفيء</span>',
+'<span style="color: #7585c1;">نوع من أنواع الورد له رائحة جميلة؟</span><br><span style="color:#ffb01a;">الفل</span>',
+'<span style="color: #7585c1;">حيوان يستطيع شرب ١٠٠ جالون ماء في اليوم؟</span><br><span style="color:#ffb01a;">فيل</span>',
+'<span style="color: #7585c1;">ما أكبر بحيرة نهرية في العالم؟</span><br><span style="color:#ffb01a;">فكتوريا</span>',
+'<span style="color: #7585c1;">سورة في القرآن غير الفاتحة تبدأ بالحمد لله؟</span><br><span style="color:#ffb01a;">فاطر</span>',
+'<span style="color: #7585c1;">أحد علماء الرياضيات الإغريق له نظريات لا زالت تدرس إلى اليوم؟</span><br><span style="color:#ffb01a;">فيثاغورس</span>',
+'<span style="color: #7585c1;">أطول عظمة في جسم الإنسان؟</span><br><span style="color:#ffb01a;">الفخذ</span>',
+'<span style="color: #7585c1;">مادة استعملت كمرهم للجسم مشتقة من النفط؟</span><br><span style="color:#ffb01a;">فازلين</span>',
+'<span style="color: #7585c1;">هو علم الكلام والمنطق؟</span><br><span style="color:#ffb01a;">الفلسفة</span>',
+'<span style="color: #7585c1;">بروز جزء من الأمعاء من فتحة جدار البطن؟</span><br><span style="color:#ffb01a;">فتق</span>',
+'<span style="color: #7585c1;">من أكبر جزر المملكة والبحر الأحمر؟</span><br><span style="color:#ffb01a;">فرسان</span>',
+'<span style="color: #7585c1;">الخلقة التي يولد عليها كل موجود وتعني الطبيعة السليمة؟</span><br><span style="color:#ffb01a;">الفطرة</span>',
+'<span style="color: #7585c1;">نبات عشبي حولي من البقوليات يتحمل المناخات القاسية والباردة، يُلَقَّح بواسطة النحل؟</span><br><span style="color:#ffb01a;">الفول</span>',
+'<span style="color: #7585c1;">بيان الحكم الشعري لمن يريد معرفته، ولا بد أن يكون من يصدره عالمًا مخلصًا حسن النية؟</span><br><span style="color:#ffb01a;">فتوى</span>',
+'<span style="color: #7585c1;">في اللغة بمعنى الابتلاء وأيضًا بمعنى الإعجاب بالشيء والتدلغ به؟</span><br><span style="color:#ffb01a;">فتنة</span>',
+'<span style="color: #7585c1;">حب الاستطلاع يسمى؟</span><br><span style="color:#ffb01a;">فضول</span>',
+'<span style="color: #7585c1;">جسم مستدير يتشكل في المكان الكلسي بعد الأمطار ولا أصل له؟</span><br><span style="color:#ffb01a;">الفقع</span>',
+'<span style="color: #7585c1;">ما الحيوان الذي رفض امر صاحبه خوفا من الله تعالى ؟؟</span><br><span style="color:#ffb01a;">الفيل</span>',
+'<span style="color: #7585c1;"> ما المعدن الاكثر توصيلا للحرارة ؟</span><br><span style="color:#ffb01a;">الفضة</span>',
+'<span style="color: #7585c1;"> ماهو اكثر الحيوانات خطرا على الانسان في افريقيا؟</span><br><span style="color:#ffb01a;">فرس النهر</span>',
+'<span style="color: #7585c1;">  الغزوات التي خاضها رسول الله ﷺ في رمضان غزوتي احداهما بدر والاخرى …؟</span><br><span style="color:#ffb01a;">فتح مكة </span>',
+'<span style="color: #7585c1;">احد الحروف التي مخرجها الشفتين ؟</span><br><span style="color:#ffb01a;">فاء</span>',
+'<span style="color: #7585c1;">دولة بدايتها فلوس ونهايتها تراب؟</span><br><span style="color:#ffb01a;">فلسطين</span>',
+'<span style="color: #7585c1;">هو البقية من الشيء او الفتات ؟</span><br><span style="color:#ffb01a;">الفضلة</span>',
+'<span style="color: #7585c1;">جمهورية في آسيا تتكون من أكثر من 7100 جزيرة؟</span><br><span style="color:#ffb01a;">الفلبين</span>'      
+      ],
+
+ // حرف ق
+    U: [
+
+    '<span style="color: #7585c1;">سورة مكية تتكلم عن البيت الحرام ورحلتي الشام واليمن؟</span><br><span style="color:#ffb01a;">قريش</span>',
+'<span style="color: #7585c1;">عملية تجرى للشرايين في القلب أو غيره لتوسعتها ولتجنب جلطة قد تحدث؟</span><br><span style="color:#ffb01a;">قسطرة</span>',
+'<span style="color: #7585c1;">في علم التجويد، اضطراب اللسان عند النطق بالحرف الساكن حتى يسمع له نبرة قوية؟</span><br><span style="color:#ffb01a;">قلقلة</span>',
+'<span style="color: #7585c1;">معلم من معالم المسجد الأقصى؟</span><br><span style="color:#ffb01a;">قبة الصخرة</span>',
+'<span style="color: #7585c1;">شجرة تستطيع تحلية مياه البحر وتخزين الملح على أوراقها وفي جذورها؟</span><br><span style="color:#ffb01a;">القرم</span>',
+'<span style="color: #7585c1;">ما اسم ناقة الرسول صلى الله عليه وسلم؟</span><br><span style="color:#ffb01a;">قصواء</span>',
+'<span style="color: #7585c1;">نوع طعام طلبه اليهود من موسى عليه السلام؟</span><br><span style="color:#ffb01a;">قثاء</span>',
+'<span style="color: #7585c1;">ما هو أول مسجد بني في الإسلام؟</span><br><span style="color:#ffb01a;">قباء</span>',
+'<span style="color: #7585c1;">ما اسم بيت النمل؟</span><br><span style="color:#ffb01a;">قرية</span>',
+'<span style="color: #7585c1;">ماذا يسمى الوعاء المصنوع من الجلد ومليء بالماء؟</span><br><span style="color:#ffb01a;">قربة</span>',
+'<span style="color: #7585c1;">ما هو الوصف الذي وصف به النبي ﷺ النساء؟</span><br><span style="color:#ffb01a;">قوارير</span>',
+'<span style="color: #7585c1;">من هو النمام؟</span><br><span style="color:#ffb01a;">القتات</span>',
+'<span style="color: #7585c1;">لقب ديني عند النصارى؟</span><br><span style="color:#ffb01a;">قسيس</span>',
+'<span style="color: #7585c1;">كلمة إيطالية الأصل معناها الغزو في البحر بهدف النهب والسلب؟</span><br><span style="color:#ffb01a;">قرصنة</span>',
+'<span style="color: #7585c1;">المساواة بين العقوبة والجريمة بحيث تكون من جنسها ومساوية لها، فمن قتل يقتل؟</span><br><span style="color:#ffb01a;">قصاص</span>',
+'<span style="color: #7585c1;">اسم من أسماء الله الحسنى معناه المتنزه عن كل نقص وعيب؟</span><br><span style="color:#ffb01a;">القدوس</span>',
+'<span style="color: #7585c1;">شعور مؤلم ناشئ عن الخوف من المستقبل؟</span><br><span style="color:#ffb01a;">قلق</span>',
+'<span style="color: #7585c1;">في الشعر، يطلق على آخر حرف في البيت الشعري ويتكرر في كل القصيدة؟</span><br><span style="color:#ffb01a;">قافية</span>',
+'<span style="color: #7585c1;">شيء كعبه للحيوان ورأسه للإنسان؟</span><br><span style="color:#ffb01a;">قمح</span>',
+'<span style="color: #7585c1;">عدم القدرة على رؤية الأشياء البعيدة بوضوح يسمى؟</span><br><span style="color:#ffb01a;">قصر نظر</span>',
+'<span style="color: #7585c1;">جرم سماوي لا يطلق ضوء أو حرارة ويدور حول الكواكب؟</span><br><span style="color:#ffb01a;">قمر</span>',
+'<span style="color: #7585c1;">هو الضحك صاخب الصوت؟</span><br><span style="color:#ffb01a;">قهقهة</span>',
+'<span style="color: #7585c1;">الحيوان الذي يصاب بالحمى؟</span><br><span style="color:#ffb01a;">قرد</span>',
+'<span style="color: #7585c1;">ما هو الحيوان صاحب أكبر بيضة؟</span><br><span style="color:#ffb01a;">قرش الحوت</span>',
+'<span style="color: #7585c1;">شبه جزيرة في شبه جزيرة بجوارها جزر؟</span><br><span style="color:#ffb01a;">قطر</span>',
+'<span style="color: #7585c1;">ما وحدة الوزن التي يوزن بها الماس والأحجار الكريمة وتساوي خمسة جرامات؟</span><br><span style="color:#ffb01a;">قيراط</span>',
+'<span style="color: #7585c1;">الاسم الذي يطلق على مولدة النساء؟</span><br><span style="color:#ffb01a;">قابلة</span>',
+'<span style="color: #7585c1;">الغشاء الدائري المنقبض الذي يؤلف الجزء الملون من العين؟</span><br><span style="color:#ffb01a;">القزحية</span>',
+'<span style="color: #7585c1;">قالت العرب “دليل عقل المرء فعله ودليل علمه….”؟</span><br><span style="color:#ffb01a;">قوله</span>',
+'<span style="color: #7585c1;">كلمة بمعنى جني الثمار؟</span><br><span style="color:#ffb01a;">قطف</span>',
+'<span style="color: #7585c1;">إشارة الحلقات في العلم الأولمبي تشير إلى؟</span><br><span style="color:#ffb01a;">القارات الخمس</span>',
+'<span style="color: #7585c1;">اسم مثنى يدل على المسجد الحرام والمسجد الأقصى؟</span><br><span style="color:#ffb01a;">القبلتين</span>',
+'<span style="color: #7585c1;">طائر بحري كبير وعجيب يمكنه أن يمكث في الهواء لمدة ٦ أيام دون أن يرفرف بجناحيه؟</span><br><span style="color:#ffb01a;">القطرس</span>',
+'<span style="color: #7585c1;">هي بيزنطة القديمة واسطنبول الحالية؟</span><br><span style="color:#ffb01a;">قسطنطينية</span>',
+'<span style="color: #7585c1;">الاسم الذي يطلق على صوت الرعد واخذ منه صوت ضرب المدفع؟</span><br><span style="color:#ffb01a;">قصف</span>',
+'<span style="color: #7585c1;">الجمع بين الحج والعمرة؟</span><br><span style="color:#ffb01a;">قران</span>',
+'<span style="color: #7585c1;">حيوان ثديي يأكل العشب والحشرات، جسمه مغطى بأشواك؟</span><br><span style="color:#ffb01a;">قنفذ</span>',
+'<span style="color: #7585c1;">مجموعة عظام بينها تجويف يحفظ الرئتين؟</span><br><span style="color:#ffb01a;">القفص الصدري</span>',
+'<span style="color: #7585c1;">من العلوم المتصلة بالقرآن، الف به أبو عمر والشاطبي؟</span><br><span style="color:#ffb01a;">القراءات</span>',
+'<span style="color: #7585c1;">ما هي السورة التي تم ختامها على اسم وقت من أوقات الصلوات الخمس؟</span><br><span style="color:#ffb01a;">القدر</span>',
+'<span style="color: #7585c1;">عندما ولدت ام النبي ﷺ ، رأت نوراً خرج منها فأضاء لها... ؟</span><br><span style="color:#ffb01a;">قصور الشام</span>',
+'<span style="color: #7585c1;">سورة من سور القرآن عدد آياتها ١١، تقع بين العاديات والتكاثر؟</span><br><span style="color:#ffb01a;">القارعة</span>'      
+      ],
+
+ // حرف ك
+    V: [
+'<span style="color: #7585c1;">شجرة ثمرتها كالبندقة تكسر وتشوى وتأكل؟</span><br><span style="color:#ffb01a;">كستناء</span>',
+'<span style="color: #7585c1;">مرض ينجم عن نقص التغذية في الطفولة؟</span><br><span style="color:#ffb01a;">كساح</span>',
+'<span style="color: #7585c1;">نبات من الفصيلة الوردية، موطنه جنبه القوقاز وإيران، ثماره صغيرة ومستديرة، لونها أحمر؟</span><br><span style="color:#ffb01a;">كرز</span>',
+'<span style="color: #7585c1;">في أي سورة توجد قصة موسى مع العبد الصالح؟</span><br><span style="color:#ffb01a;">كهف</span>',
+'<span style="color: #7585c1;">منتج شعاره الدعائي "لذه كبيرة لجوع صغير"؟</span><br><span style="color:#ffb01a;">كندر بيونو</span>',
+'<span style="color: #7585c1;">أول دولة عربية تفوز بكأس الأمم الآسيوية في كرة القدم؟</span><br><span style="color:#ffb01a;">الكويت</span>',
+'<span style="color: #7585c1;">هو والنبي صلى الله عليه وسلم كالوسطى والسبابة في الجنة؟</span><br><span style="color:#ffb01a;">كافل اليتيم</span>',
+'<span style="color: #7585c1;">نوع من أنواع السمك؟</span><br><span style="color:#ffb01a;">كنعد</span>',
+'<span style="color: #7585c1;">عنصر كيميائي سام يستعمل في القضاء على الجراثيم؟</span><br><span style="color:#ffb01a;">كلور</span>',
+'<span style="color: #7585c1;">أكبر عضو داخلي في جسم الإنسان؟</span><br><span style="color:#ffb01a;">كبد</span>',
+'<span style="color: #7585c1;">ماذا يلقب ملك الفرس قديما؟</span><br><span style="color:#ffb01a;">كسرى</span>',
+'<span style="color: #7585c1;">اكمل "لكل جواد .."؟</span><br><span style="color:#ffb01a;">كبوة</span>',
+'<span style="color: #7585c1;">صفة أخرجت إبليس من الجنة؟</span><br><span style="color:#ffb01a;">كبر</span>',
+'<span style="color: #7585c1;">أحلام مزعجة؟</span><br><span style="color:#ffb01a;">كوابيس</span>',
+'<span style="color: #7585c1;">عنصر أساسي في مواد التخدير؟</span><br><span style="color:#ffb01a;">كحول</span>',
+'<span style="color: #7585c1;">رياضة معناها "اليد الفارغة"؟</span><br><span style="color:#ffb01a;">كاراتيه</span>',
+'<span style="color: #7585c1;">يستخرج العنبر من؟</span><br><span style="color:#ffb01a;">كبد الحوت</span>',
+'<span style="color: #7585c1;">ماذا يطلق على رسغ القدم؟</span><br><span style="color:#ffb01a;">كاحل</span>',
+'<span style="color: #7585c1;">من مات ليس له ولد ولا والد؟</span><br><span style="color:#ffb01a;">كلالة</span>',
+'<span style="color: #7585c1;">تجويف طبيعي في صخرة أو جبل؟</span><br><span style="color:#ffb01a;">كهف</span>',
+'<span style="color: #7585c1;">سؤال تختلف إجابته دائما؟</span><br><span style="color:#ffb01a;">كم الساعة</span>',
+'<span style="color: #7585c1;">علامة الجر الأصلية؟</span><br><span style="color:#ffb01a;">كسرة</span>',
+'<span style="color: #7585c1;">عضو في جسم الإنسان على شكل حبة اللوبي من جزئين؟</span><br><span style="color:#ffb01a;">كلى</span>',
+'<span style="color: #7585c1;">ملك دعا عليه رسول الله صلى الله عليه وسلم عندما تلقى كتاب النبي ومزقه وقال: (اللهم مزق ملكه)؟</span><br><span style="color:#ffb01a;">كسرى</span>',
+'<span style="color: #7585c1;">هي مقاطعة تتنازع عليها الهند وباكستان وقامت من أجلها الحروب؟</span><br><span style="color:#ffb01a;">كشمير</span>',
+'<span style="color: #7585c1;">قال العرب "آخر الدواء..."؟</span><br><span style="color:#ffb01a;">الكي</span>',
+'<span style="color: #7585c1;">هو كل مركب إضافي بُدئ بأب أو أم كـ ابن بكر وأم كلثوم؟</span><br><span style="color:#ffb01a;">كنية</span>',
+'<span style="color: #7585c1;">بقع صغيرة ملونة تنتشر في الوجه؟</span><br><span style="color:#ffb01a;">كلف</span>',
+'<span style="color: #7585c1;">هو من أظهَر أسنانه غضبًا واستياءً وعدم رضى عن أمر ما؟</span><br><span style="color:#ffb01a;">كشر</span>',
+'<span style="color: #7585c1;">مقدار ما يحتويه أي جسم من مادة وتقدر بوحدة الكيلو قرام وتقاس بالميزان؟</span><br><span style="color:#ffb01a;">الكتلة</span>',
+'<span style="color: #7585c1;">هو نبات تصنع من أليافه المنسوجات ويخرج من بذوره زيت خاص يُسخدم في البويات؟</span><br><span style="color:#ffb01a;">الكتان</span>',
+'<span style="color: #7585c1;">من حفظ عشر آيات من أول سورة عصم من الدجال.. فما هي السورة؟</span><br><span style="color:#ffb01a;">الكهف</span>',
+'<span style="color: #7585c1;">مادة صفراء اللون لامعة تدخل في صناعة بعض المنتجات مثل الثقاب؟</span><br><span style="color:#ffb01a;">الكبريت</span>',
+'<span style="color: #7585c1;">ما عاصمة ماليزيا؟</span><br><span style="color:#ffb01a;">كولالمبور</span>',
+'<span style="color: #7585c1;">من الأمثال العربية "الأدب مال واستعماله..."؟</span><br><span style="color:#ffb01a;">كمال</span>',
+'<span style="color: #7585c1;">ما الحيوان الذي نام مع أصحابه؟</span><br><span style="color:#ffb01a;">الكلب</span>',
+'<span style="color: #7585c1;">ماكمل الحديث (( اتقوا النار ولو بشق تمرة فمن لم يجد فب ..))؟</span><br><span style="color:#ffb01a;">كلمة طيبية</span>',
+'<span style="color: #7585c1;">كل مافي الفضاء بما في ذلك مجرتنا والمجرات الاخرى</span><br><span style="color:#ffb01a;"> الكون</span>',
+'<span style="color: #7585c1;">مادة عطرية بيضاء اللون، ذو رائحة عطرية، تستخرج من أحد الأشجار، ذكرت في القرآن من نعم أهل الجنة؟</span><br><span style="color:#ffb01a;">الكافور</span>'     
+      ],
+
+ // حرف ل
+    W: [
+    '<span style="color: #7585c1;">وصف للخصم الشديد الذي لا ينفك؟</span><br><span style="color:#ffb01a;">لدود</span>',
+'<span style="color: #7585c1;">من عباد الله الصالحين أعطاه الله العلم والحكمة وكان له وصايا نافعة ورد ذكرها في القرآن؟</span><br><span style="color:#ffb01a;">لقمان</span>',
+'<span style="color: #7585c1;">هو الطعم القارص أو الحارق؟</span><br><span style="color:#ffb01a;">لاذع</span>',
+'<span style="color: #7585c1;">أحد أصنام العرب الكبرى، يرمز للشمس، أشار القرآن إلى تقديس العرب له قبل الإسلام؟</span><br><span style="color:#ffb01a;">اللات</span>',
+'<span style="color: #7585c1;">من المكونات الداخلية لجهاز الكمبيوتر؟</span><br><span style="color:#ffb01a;">اللوحة الأم</span>',
+'<span style="color: #7585c1;">من هو النبي الذي آمن بنبي؟</span><br><span style="color:#ffb01a;">لوط</span>',
+'<span style="color: #7585c1;">عن طريق ماذا يشم الثعبان؟</span><br><span style="color:#ffb01a;">لسانه</span>',
+'<span style="color: #7585c1;">هو الغلاف الخارجي الصلب لساق الشجرة وجذورها وأغصانها؟</span><br><span style="color:#ffb01a;">لحاء</span>',
+'<span style="color: #7585c1;">هي تفرع من اللغة الأم؟</span><br><span style="color:#ffb01a;">لهجة</span>',
+'<span style="color: #7585c1;">نوع من الزهور قدسه المصريون القدماء؟</span><br><span style="color:#ffb01a;">لوتس</span>',
+'<span style="color: #7585c1;">من المجوهرات الثمينة يستخرج من البحار؟</span><br><span style="color:#ffb01a;">لؤلؤ</span>',
+'<span style="color: #7585c1;">غدتان تساعدان على حماية الجسم من الجراثيم التي تدخل عن طريق الفم؟</span><br><span style="color:#ffb01a;">لوزتان</span>',
+'<span style="color: #7585c1;">ما هي الدولة العربية الوحيدة التي لا يوجد فيها صحراء؟</span><br><span style="color:#ffb01a;">لبنان</span>',
+'<span style="color: #7585c1;">لفظ في سورة الهمزة بمعنى الذي يعيب الناس ويطعن فيهم؟</span><br><span style="color:#ffb01a;">لمزة</span>',
+'<span style="color: #7585c1;">أخف المعادن؟</span><br><span style="color:#ffb01a;">الليثيوم</span>',
+'<span style="color: #7585c1;">لهب النار الخالص الذي لا دخان فيه؟</span><br><span style="color:#ffb01a;">لظى</span>',
+'<span style="color: #7585c1;">نوع من الطيور؟</span><br><span style="color:#ffb01a;">لقلق</span>',
+'<span style="color: #7585c1;">واحد من أكبر المعاجم العربية؟</span><br><span style="color:#ffb01a;">لسان العرب</span>',
+'<span style="color: #7585c1;">بمعنى ظهر وبان؟</span><br><span style="color:#ffb01a;">لاح</span>',
+'<span style="color: #7585c1;">هو مصدر ضوئي يتفوق طاقة أشعته تلك المجموعة من الأشعة الصادرة من منابع الضوء العادية ويستعمل في الطب؟</span><br><span style="color:#ffb01a;">ليزر</span>',
+'<span style="color: #7585c1;">قال الحسن البصري “عقل الرجل مخبوء تحت ..” ؟</span><br><span style="color:#ffb01a;">لسانه</span>',
+'<span style="color: #7585c1;">مقوامة الانسياب وهي قوة تحولدون انسياب السائل بسهولة ؟</span><br><span style="color:#ffb01a;">لزوجة</span>',
+'<span style="color: #7585c1;">جسم مستطيل متحرك خطره عظيم إذا استخدم في الشر و بسببه يكب الناس في النار؟</span><br><span style="color:#ffb01a;">اللسان</span>',
+'<span style="color: #7585c1;">قال الرسول ﷺ "أفضل الصيام، بعد رمضان، شهر الله المحرم، وأفضل الصلاة، بعد الفريضة، صلاة..."؟</span><br><span style="color:#ffb01a;">الليل</span>'
+
+      
+      ],
+
+ // حرف م
+    X: [
+    '<span style="color: #7585c1;">قال الله تعالى "فَمَنِ اضْطُرَّ فِي مَخْمَصَةٍ غَيْرَ مُتَجَانِفٍ لِإِثْمٍ فَإِنَّ اللَّهَ غَفُورٌ رَحِيمٌ" فما هي المخمصة؟</span><br><span style="color:#ffb01a;">المجاعة الشديدة</span>',
+'<span style="color: #7585c1;">ما هو أكبر الكواكب في درب التبانة؟</span><br><span style="color:#ffb01a;">مشترى</span>',
+'<span style="color: #7585c1;">ما اسم خازن النار؟</span><br><span style="color:#ffb01a;">مالك</span>',
+'<span style="color: #7585c1;">بجوار دولة المغرب،، دولة عربية لا يوجد في علمها اللون الأبيض؟</span><br><span style="color:#ffb01a;">موريتانيا</span>',
+'<span style="color: #7585c1;">سورة تسمى بالمنجية؟</span><br><span style="color:#ffb01a;">الملك</span>',
+'<span style="color: #7585c1;">قال تعالى "في سدر مخضود ¤ وطلح منضود" ما المقصود بالطلح؟</span><br><span style="color:#ffb01a;">الموز</span>',
+'<span style="color: #7585c1;">حجمه هو ثلث مساحة قاعدته الدائرية مضروبة في ارتفاعه؟</span><br><span style="color:#ffb01a;">المخروط</span>',
+'<span style="color: #7585c1;">ما هي أكثر سورة قد ورد فيها اسم مريم؟</span><br><span style="color:#ffb01a;">المائدة</span>',
+'<span style="color: #7585c1;">من الحضارات القديمة التي ظهرت منذ القدم على أرض الجزيرة العربية وهي حضارة النبي شعيب؟</span><br><span style="color:#ffb01a;">مدين</span>',
+'<span style="color: #7585c1;">اسم يطلق على الكائن البشري في الشهرين الأولين من تطوره في رحم الأم؟</span><br><span style="color:#ffb01a;">مضغة</span>',
+'<span style="color: #7585c1;">يقول الشاعر "شويخ من أرض مكناس وسط الأسواق يغني وأش عليا من الناس وأش على الناس مني"، أين تقع مكناس؟</span><br><span style="color:#ffb01a;">المغرب</span>',
+'<span style="color: #7585c1;">من القائل "إذا اتتك مذمتي من ناقص فهي الشهادة بأني كامل"؟</span><br><span style="color:#ffb01a;">المتنبي</span>',
+'<span style="color: #7585c1;">موضع تقاء عظمتين أو أكثر؟</span><br><span style="color:#ffb01a;">مفصل</span>',
+'<span style="color: #7585c1;">مهنة رمضانية اختفت تقريبًا؟</span><br><span style="color:#ffb01a;">مسحر</span>',
+'<span style="color: #7585c1;">يستخرج من بطن ذكر الغزال؟</span><br><span style="color:#ffb01a;">مسك</span>',
+'<span style="color: #7585c1;">أحد زوجات الرسول الكريم عليه الصلاة والسلام؟</span><br><span style="color:#ffb01a;">ميمونة بنت الحارث</span>',
+'<span style="color: #7585c1;">بماذا يسمى يوم الخميس في الجاهلية؟</span><br><span style="color:#ffb01a;">مؤنس</span>',
+'<span style="color: #7585c1;">قابلية المادة للعودة إلى شكلها أو حجمها الطبيعي بعد تعرضها للتشويه؟</span><br><span style="color:#ffb01a;">مرونة</span>',
+'<span style="color: #7585c1;">أصغر دولة في آسيا؟</span><br><span style="color:#ffb01a;">المالديف</span>',
+'<span style="color: #7585c1;">يدخل في تركيب جميع أعضاء الإنسان؟</span><br><span style="color:#ffb01a;">ماء</span>',
+'<span style="color: #7585c1;">ما هي الخلية الوحيدة في جسم الإنسان التي لا تصلح نفسها؟</span><br><span style="color:#ffb01a;">مينا الأسنان</span>',
+'<span style="color: #7585c1;">ماذا يسمى السكين التي يستخدمها الجراح؟</span><br><span style="color:#ffb01a;">مشرط</span>',
+'<span style="color: #7585c1;">من قائل "قد اعذر من أنذر"؟</span><br><span style="color:#ffb01a;">معاوية بن أبي سفيان</span>',
+'<span style="color: #7585c1;">هو أمر خارق للعادة يؤيد الله به أنبيائه؟</span><br><span style="color:#ffb01a;">معجزة</span>',
+'<span style="color: #7585c1;">من أي الحيوانات يصنع الصوف الكشميري الثمين؟</span><br><span style="color:#ffb01a;">ماعز</span>',
+'<span style="color: #7585c1;">قدرة الجسم على مقاومة الأمراض تسمى؟</span><br><span style="color:#ffb01a;">مناعة</span>',
+'<span style="color: #7585c1;">من أعلم هذه الأمة بالحلال والحرام؟</span><br><span style="color:#ffb01a;">معاذ بن جبل</span>',
+'<span style="color: #7585c1;">من هم الزبانية؟</span><br><span style="color:#ffb01a;">ملائكة العذاب</span>',
+'<span style="color: #7585c1;">ماذا تسمى الميتة بالضرب؟</span><br><span style="color:#ffb01a;">الموقوذة</span>',
+'<span style="color: #7585c1;">من هي أم إبراهيم ابن سيدنا محمد ﷺ؟</span><br><span style="color:#ffb01a;">ماريا القبطية</span>',
+'<span style="color: #7585c1;">قال الرسولﷺ -الدنيا متاع وخير متاعها ..-؟</span><br><span style="color:#ffb01a;">المرأة الصالحة </span>',
+'<span style="color: #7585c1;">من هو الرياضي الذي ولد باسم كاسيوس كلاي وغير اسمه بعد إسلامه؟</span><br><span style="color:#ffb01a;">محمد علي</span>',
+'<span style="color: #7585c1;">ماذا يسمى الشخص الذي أدرك الجاهلية والإسلام؟</span><br><span style="color:#ffb01a;">مخضرم</span>',
+'<span style="color: #7585c1;">حيوان بري منقرض يعتبر حجمه هائلًا جدًا، ذو قرون طويلة، وهو من أجداد الفيل؟</span><br><span style="color:#ffb01a;">ماموث</span>',
+'<span style="color: #7585c1;">القطار الكهربائي تحت الأرض؟</span><br><span style="color:#ffb01a;">مترو</span>',
+'<span style="color: #7585c1;">آلة حربية استعملها الرومان لقذف الحجارة أو الذهب عن بعد؟</span><br><span style="color:#ffb01a;">منجنيق</span>',
+'<span style="color: #7585c1;">كلمة تطلق على الأكل والشرب والحركات الكثيرة أو الضحك؟</span><br><span style="color:#ffb01a;">مبطلات الصلاة</span>',
+'<span style="color: #7585c1;">"الخيل والليل والبيداء تعرفني والسيف والرمح والقرطاس والقلم" من القائل؟</span><br><span style="color:#ffb01a;">المتنبي</span>',
+'<span style="color: #7585c1;">الاسم الأصلي للإمام الشافعي؟</span><br><span style="color:#ffb01a;">محمد بن إدريس</span>',
+'<span style="color: #7585c1;">الاسم الذي يطلق على الميتة بسبب السقوط من مكان مرتفع؟</span><br><span style="color:#ffb01a;">متردية</span>',
+'<span style="color: #7585c1;">إحدى عظيمات الثلاث داخل الأذن والتي تنقل اهتزازات الطبلة إلى الأذن الداخلية، ماذا تسمى؟</span><br><span style="color:#ffb01a;">مطرقة</span>',
+'<span style="color: #7585c1;">هددهم الله وتوعدهم لأنهم ينقصون، ينقصون المكيال والميزان ويبخسون حقوق الناس؟</span><br><span style="color:#ffb01a;">المطففين</span>',
+'<span style="color: #7585c1;">مثل عربي يضرب في حث الإنسان على الثقة بنفسه أكثر من غيره؟</span><br><span style="color:#ffb01a;">ما حك جلدك مثل ظفرك</span>',
+'<span style="color: #7585c1;">الظفر الحاد المُحدد والمُقوّس تكون في أطراف قوائم الطيور وبعض الزواحف والثديات؟</span><br><span style="color:#ffb01a;">مخلب</span>',
+'<span style="color: #7585c1;">نسيج بشكل كيس يعمل كمستودع للعصارة الصفراوية التي يفرزها الكبد؟</span><br><span style="color:#ffb01a;">المرارة</span>',
+'<span style="color: #7585c1;">شي ما يمشي ألا لين تخفس عيونه ؟</span><br><span style="color:#ffb01a;">المقص</span>',
+'<span style="color: #7585c1;">الى جودت أذيناته هلت دميعاته ؟</span><br><span style="color:#ffb01a;">المنخل</span>',
+'<span style="color: #7585c1;">كم مرة ورد لفظ رمضان في القرآن؟</span><br><span style="color:#ffb01a;">مرة واحدة</span>',
+'<span style="color: #7585c1;">يستطيع حمل طن من الأخشاب ولا يستطيع حمل مسمار صغير؟</span><br><span style="color:#ffb01a;">الماء</span>',
+'<span style="color: #7585c1;">شيء إذا شفته ما تاكله وإذا ما شفته تاكله؟</span><br><span style="color:#ffb01a;">المطب</span>',
+'<span style="color: #7585c1;">مكان يفيض إليه الحجاج بعد عرفة؟</span><br><span style="color:#ffb01a;">مزدلفة</span>'
+      ],
+
+ // حرف ن
+    Y: [
+    '<span style="color: #7585c1;">سورة تنتهي كل آياتها بحرف السين؟</span><br><span style="color:#ffb01a;">الناس</span>',
+'<span style="color: #7585c1;">ما هو الحيوان الذي على علم مصر؟</span><br><span style="color:#ffb01a;">نسر</span>',
+'<span style="color: #7585c1;">أكمل "من صبر وتأنى …"؟</span><br><span style="color:#ffb01a;">نال ما يتمنى</span>',
+'<span style="color: #7585c1;">في أي سورة ورد اسم يوم القيامة الطامة؟</span><br><span style="color:#ffb01a;">النازعات</span>',
+'<span style="color: #7585c1;">ضمير المتكلم للمثنى والجمع؟</span><br><span style="color:#ffb01a;">نحن</span>',
+'<span style="color: #7585c1;">من أفات اللسان يجب على المسلم الابتعاد عنها؟</span><br><span style="color:#ffb01a;">نميمة</span>',
+'<span style="color: #7585c1;">ما هي المادة الأساسية الموجودة في الموز؟</span><br><span style="color:#ffb01a;">نشويات</span>',
+'<span style="color: #7585c1;">من سور القرآن ذكرت فيها البسملة مرتين؟</span><br><span style="color:#ffb01a;">النمل</span>',
+'<span style="color: #7585c1;">ما هي السورة التي نزلت فيها براءة السيدة عائشة رضي الله عنها؟</span><br><span style="color:#ffb01a;">النور</span>',
+'<span style="color: #7585c1;">صفة تطلق على الشخص المستغرق في حب ذاته الإعجاب بها؟</span><br><span style="color:#ffb01a;">نرجسي</span>',
+'<span style="color: #7585c1;">من أين يستخرج الفازلين؟</span><br><span style="color:#ffb01a;">النفط</span>',
+'<span style="color: #7585c1;">المسؤول عن تقديم الطعام في المطعم يسمى؟</span><br><span style="color:#ffb01a;">نادل</span>',
+'<span style="color: #7585c1;">من الطيور الذي يعيش على الشواطئ ويتغذى على الأسماك؟</span><br><span style="color:#ffb01a;">نورس</span>',
+'<span style="color: #7585c1;">من المعادن الموصلة للكهرباء؟</span><br><span style="color:#ffb01a;">نحاس</span>',
+'<span style="color: #7585c1;">ما نعنى اسم جعفر؟</span><br><span style="color:#ffb01a;">النهر الصغير</span>',
+'<span style="color: #7585c1;">من المقصود في الآية "فبهت الذي كفر"؟</span><br><span style="color:#ffb01a;">النمرود</span>',
+'<span style="color: #7585c1;">ملكة فرعونية معناها الجميلة القادمة؟</span><br><span style="color:#ffb01a;">نفرتيتي</span>',
+'<span style="color: #7585c1;">بمعنى المخالف أول المقابل للطرف الآخر؟</span><br><span style="color:#ffb01a;">نقيض</span>',
+'<span style="color: #7585c1;">من مسببات مرض السكر؟</span><br><span style="color:#ffb01a;">نقص الأنسولين</span>',
+'<span style="color: #7585c1;">ظاهرة طبيعية تتعطل بها القوى لإعادة تنظيم نشاط الدماغ والفعاليات الحيوية الأخرى؟</span><br><span style="color:#ffb01a;">نوم</span>',
+'<span style="color: #7585c1;">ما يفرض للزوجة على زوجها من مال؟</span><br><span style="color:#ffb01a;">نفقة</span>',
+'<span style="color: #7585c1;">يوم العاشر من ذي الحجة هو يوم ال..؟</span><br><span style="color:#ffb01a;">نحر</span>',
+'<span style="color: #7585c1;">اكمل "خير المال ما .."؟</span><br><span style="color:#ffb01a;">نفع</span>',
+'<span style="color: #7585c1;">ماذا تسمى أنثى الجمل؟</span><br><span style="color:#ffb01a;">ناقة</span>',
+'<span style="color: #7585c1;">شجرة تشبه المؤمن؟</span><br><span style="color:#ffb01a;">النخلة</span>',
+'<span style="color: #7585c1;">إحدى الدول الإسكندنافية؟</span><br><span style="color:#ffb01a;">النرويج</span>',
+'<span style="color: #7585c1;">أداة استعملها النصارى قديمًا للإعلان عن صلواتهم؟</span><br><span style="color:#ffb01a;">الناقوس</span>',
+'<span style="color: #7585c1;">معركة تعتبر محطة هامة في تاريخ الجهاد الإسلامي ضد فارس وقعت في خلافة عمر بن الخطاب؟</span><br><span style="color:#ffb01a;">نهاوند</span>',
+'<span style="color: #7585c1;">الجزء الصلب من الشهب الذي يصل إلى الأرض؟</span><br><span style="color:#ffb01a;">نيزك</span>',
+'<span style="color: #7585c1;">نعمة أنعمها الله على المسلمين في غزوة بدر كان فيها إبعاد لوساوس الشيطان عن قلوبهم وراحة أبدانهم؟</span><br><span style="color:#ffb01a;">نعاس</span>',
+'<span style="color: #7585c1;">ما السورة التي بُدأت بها كلمة (سورة)؟</span><br><span style="color:#ffb01a;">النور</span>',
+'<span style="color: #7585c1;">من الذي صلى عليه النبي ﷺ صلاة الغائب؟</span><br><span style="color:#ffb01a;">النجاشي</span>',
+'<span style="color: #7585c1;">من أنواع الخطوط العربية كان يعرف قديمًا باسم البديع؟</span><br><span style="color:#ffb01a;">النسخ</span>',
+'<span style="color: #7585c1;">إليه كانت أولى رسائل الرسول ﷺ التي وجهها إلى الملوك يدعوهم إلى الإسلام؟</span><br><span style="color:#ffb01a;">النجاشي</span>',
+'<span style="color: #7585c1;">كل دم يخرج من وعاء دموي أحيانًا يكون داخلي وأحيانًا خارجي؟</span><br><span style="color:#ffb01a;">نزيف</span>',
+'<span style="color: #7585c1;">ما هو العنصر الذي يشكل أكثر من 78٪ من الغلاف الجوي للأرض؟</span><br><span style="color:#ffb01a;">نيتروجين</span>',
+'<span style="color: #7585c1;">ما الحيوان الذي اوحى له الله تعالى ؟</span><br><span style="color:#ffb01a;">النحل</span>',
+'<span style="color: #7585c1;">ما الحيوان الذي انذر قومه ؟</span><br><span style="color:#ffb01a;">النمل</span>',
+'<span style="color: #7585c1;">اختلط الحابل بـ؟</span><br><span style="color:#ffb01a;">النابل</span>',
+'<span style="color: #7585c1;">كم يفرض للزوج من الميراث في حال عدم وجود الفرع الوارث؟</span><br><span style="color:#ffb01a;">النصف</span>',
+'<span style="color: #7585c1;">اسم مثنى يطلق على الذهب والفضة؟</span><br><span style="color:#ffb01a;">النقدان</span>'      
+      ],
+
+// حرف ه
+    Z: [
+    '<span style="color: #7585c1;">ما يكون للرجل من مخافة ووقار؟</span><br><span style="color:#ffb01a;">هيبة</span>',
+'<span style="color: #7585c1;">من المأثورات.. اكمل “المزاح يزيل..”؟</span><br><span style="color:#ffb01a;">الهيبة</span>',
+'<span style="color: #7585c1;">ما هو المحيط الفاصل بين كندا واليابان عند السفر بينهما؟</span><br><span style="color:#ffb01a;">الهادي</span>',
+'<span style="color: #7585c1;">ما هو الغاز الذي يمثل ٧٥٪ من الشمس؟</span><br><span style="color:#ffb01a;">الهيدروجين</span>',
+'<span style="color: #7585c1;">ما اسم وزير فرعون؟</span><br><span style="color:#ffb01a;">هامان</span>',
+'<span style="color: #7585c1;">وعاء مجوف من الحديد أو النحاس يدق فيه الطعام؟</span><br><span style="color:#ffb01a;">هاون</span>',
+'<span style="color: #7585c1;">ماذا تسمى السيارة التي تعمل على الوقود والكهرباء؟</span><br><span style="color:#ffb01a;">هجينة</span>',
+'<span style="color: #7585c1;">ماذا يقال عن الأسد الخمول الهرم الذي لا يستطيع اصطياد فريسته؟</span><br><span style="color:#ffb01a;">الهيس الأربد</span>',
+'<span style="color: #7585c1;">هو الجزع والخوف الشديد؟</span><br><span style="color:#ffb01a;">هلع</span>',
+'<span style="color: #7585c1;">اكمل “لكل عالم..”؟</span><br><span style="color:#ffb01a;">هفوة</span>',
+'<span style="color: #7585c1;">قطعة اللحم التي لا عظم فيها؟</span><br><span style="color:#ffb01a;">هبرة</span>',
+'<span style="color: #7585c1;">من الطيور المذكورة في القرآن؟</span><br><span style="color:#ffb01a;">هدهد</span>',
+'<span style="color: #7585c1;">نبي سُميت سورة من القرآن باسمه؟</span><br><span style="color:#ffb01a;">هود</span>',
+'<span style="color: #7585c1;">كلمة تعنى قط؟</span><br><span style="color:#ffb01a;">هر</span>',
+'<span style="color: #7585c1;">دولة تنتج أعلى معدل للسكر في العالم؟</span><br><span style="color:#ffb01a;">الهند</span>',
+'<span style="color: #7585c1;">ماذا يطلق على الاتفاقية بين متخاصمين لوقف القتال؟</span><br><span style="color:#ffb01a;">هدنة</span>',
+'<span style="color: #7585c1;">أول من سعى بين الصفا والمروة؟</span><br><span style="color:#ffb01a;">هاجر</span>',
+'<span style="color: #7585c1;">هو تمليك الإنسان ماله لغيره في الحياة بلا عوض؟</span><br><span style="color:#ffb01a;">هبة</span>',
+'<span style="color: #7585c1;">صفة تطلق على الشيء الذي يسهل كسره؟</span><br><span style="color:#ffb01a;">هش</span>',
+'<span style="color: #7585c1;">مضيق شهير؟</span><br><span style="color:#ffb01a;">هرمز</span>',
+'<span style="color: #7585c1;">أعلى مراتب الحب؟</span><br><span style="color:#ffb01a;">هيام</span>',
+'<span style="color: #7585c1;">وحدة قياس تردد الموجات اللاسلكية وتمثل عدد الهزات في الثانية؟</span><br><span style="color:#ffb01a;">هرتز</span>',
+'<span style="color: #7585c1;">من النباتات يستخدم مع التوابل؟</span><br><span style="color:#ffb01a;">هيل</span>',
+'<span style="color: #7585c1;">هو المنطق الفارغ الذي لا معنى له؟</span><br><span style="color:#ffb01a;">هراء</span>',
+'<span style="color: #7585c1;">أول دم أهرق في الأرض هو دم؟</span><br><span style="color:#ffb01a;">هابيل</span>',
+'<span style="color: #7585c1;">هو الصوت الخفي؟</span><br><span style="color:#ffb01a;">همس</span>',
+'<span style="color: #7585c1;">ما هو أعمق محيط من بين المحيطات؟</span><br><span style="color:#ffb01a;">الهادئ</span>',
+'<span style="color: #7585c1;">ضمير للغائب المفرد المذكر؟</span><br><span style="color:#ffb01a;">هو</span>',
+'<span style="color: #7585c1;">مقصورة فوق الجمل تركب لتركب بها النساء؟</span><br><span style="color:#ffb01a;">هودج</span>',
+'<span style="color: #7585c1;">هي صفة بين المشي والعدو؟</span><br><span style="color:#ffb01a;">هرولة</span>',
+'<span style="color: #7585c1;">في اللغة هو خرق الستر عما وراءه؟</span><br><span style="color:#ffb01a;">هتك</span>',
+'<span style="color: #7585c1;">موقع شهير على شبكة الإنترنت خاص بإنشاء بريد إلكتروني مجاني؟</span><br><span style="color:#ffb01a;">هوت ميل</span>',
+'<span style="color: #7585c1;">هو الصياح بالتشجيع والتأييد؟</span><br><span style="color:#ffb01a;">هتف</span>',
+'<span style="color: #7585c1;">هو اسم ساعة شديدة الحرارة في منتصف النهار؟</span><br><span style="color:#ffb01a;">هاجرة</span>',
+'<span style="color: #7585c1;">هو أول من سن رحلتي الشتاء والصيف وهو جد الرسول ﷺ؟</span><br><span style="color:#ffb01a;">هاشم بن عبدمناف</span>',
+'<span style="color: #7585c1;">عكس المحترف؟</span><br><span style="color:#ffb01a;">هاوي</span>',
+'<span style="color: #7585c1;">سلسلة جبال اسيوية اسمها يعني مكان الثلج من اعلى قممها ايفرست؟</span><br><span style="color:#ffb01a;">هملايا</span>',
+'<span style="color: #7585c1;">دكتاتور ألماني وزعيم الحزب النازي وانتحر بعد هزيمته وتدمير بلاده في الحرب العالمية الثانية؟</span><br><span style="color:#ffb01a;">هتلر</span>',
+'<span style="color: #7585c1;">نوع من أنواع الطائرات لديها القدرة على الطيران والارتفاع عن الأرض بمساعدة ريشتين أو أكثر تعرف بالعربية بالطائرات العامودية فما هو اسمها بالأجنبية؟</span><br><span style="color:#ffb01a;">هيليكوبتر</span>',
+'<span style="color: #7585c1;">الخليفة ابن الخليفة ابن الخيزران بلغ العباسييون ايامه افضل فتراتهم من المجد والعظمه وكان يحب اهل العلم فصيحا بليغا كثير العبادة ؟</span><br><span style="color:#ffb01a;">هارون الرشيد</span>',
+'<span style="color: #7585c1;">مصطلح يطلقه المختصون على ذرية ناتجة من تزويج نوعين مختلفين من الحيوانات؟</span><br><span style="color:#ffb01a;">هجين</span>'      
+      ],
+
+// حرف و
+    A2: [
+    '<span style="color: #7585c1;">ما معنى النمارق؟</span><br><span style="color:#ffb01a;">وسائد</span>',
+'<span style="color: #7585c1;">ما اسم العرق المتعلق في القلب اذا انقطع مات الانسان؟</span><br><span style="color:#ffb01a;">وتين</span>',
+'<span style="color: #7585c1;">من عادات الجاهلية التي كان يمارسها الجاهلون مع البنات خشية العار؟</span><br><span style="color:#ffb01a;">وأد البنات</span>',
+'<span style="color: #7585c1;">من الثديات التي تطير؟</span><br><span style="color:#ffb01a;">وطواط</span>',
+'<span style="color: #7585c1;">مسلسل "كلنا عيال قرية" اسمه هو الشطر الأول من مثل شعبي، فما هو الشطر الثاني؟</span><br><span style="color:#ffb01a;">وكل منا يعرف خيه</span>',
+'<span style="color: #7585c1;">ماذا يطلق على كل مرض شديد العدوى سريع الانتشار؟</span><br><span style="color:#ffb01a;">وباء</span>',
+'<span style="color: #7585c1;">ما الوصف الذي وصفه الله تعالى لأمة محمد ﷺ؟</span><br><span style="color:#ffb01a;">الوسطية</span>',
+'<span style="color: #7585c1;">اكمل "تعددت الأسباب والموت .."؟</span><br><span style="color:#ffb01a;">واحد</span>',
+'<span style="color: #7585c1;">ما الشيء الذي عليك الاحتفاظ به بعد أن تعطيه غيرك؟</span><br><span style="color:#ffb01a;">وعد</span>',
+'<span style="color: #7585c1;">علم يختص بدراسة علاقات نسل الإنسان والحيوان؟</span><br><span style="color:#ffb01a;">وراثة</span>',
+'<span style="color: #7585c1;">وحدة القوة الكهربائية؟</span><br><span style="color:#ffb01a;">واط</span>',
+'<span style="color: #7585c1;">من هو الديسم؟</span><br><span style="color:#ffb01a;">ولد الدب</span>',
+'<span style="color: #7585c1;">الإجراءات التي تتخذ لمنع حدوث الأمراض وانتشارها؟</span><br><span style="color:#ffb01a;">وقاية</span>',
+'<span style="color: #7585c1;">ركن الحج الأعظم؟</span><br><span style="color:#ffb01a;">الوقوف بعرفة</span>',
+'<span style="color: #7585c1;">ماهو الطين الرقيق؟</span><br><span style="color:#ffb01a;">وحل</span>',
+'<span style="color: #7585c1;">لفظي يطلق على أمير المدينة؟</span><br><span style="color:#ffb01a;">والي</span>',
+'<span style="color: #7585c1;">هو الشق بين الجبلين؟</span><br><span style="color:#ffb01a;">وادي</span>',
+'<span style="color: #7585c1;">هو كل ما يتصوره الإنسان في داخله وهو غير صحيح؟</span><br><span style="color:#ffb01a;">الوهم</span>',
+'<span style="color: #7585c1;">الغسل والمسح على أعضاء مخصوصة مع النية؟</span><br><span style="color:#ffb01a;">وضوء</span>',
+'<span style="color: #7585c1;">ماذا يسمى طعام العرس؟</span><br><span style="color:#ffb01a;">وليمة</span>',
+'<span style="color: #7585c1;">ما هو المرادف العربي لمصطلح "هاشتاق" المستخدم في وسائل التواصل الاجتماعي؟</span><br><span style="color:#ffb01a;">وسم</span>',
+'<span style="color: #7585c1;">هي العظام التي تكون على الفخذ؟</span><br><span style="color:#ffb01a;">ورك</span>',
+'<span style="color: #7585c1;">برنامج مشهور لمعالجة النصوص في جهاز الحاسب الآلي؟</span><br><span style="color:#ffb01a;">وورد</span>',
+'<span style="color: #7585c1;">كتلة من الأنسجة ناتجة عن نمو غير طبيعي للخلايا؟</span><br><span style="color:#ffb01a;">ورم</span>',
+'<span style="color: #7585c1;">هو المطر الذي يخرج من السحاب كما ورد في القرآن الكريم؟</span><br><span style="color:#ffb01a;">ودق</span>',
+'<span style="color: #7585c1;">احد الاسماء التي تطلق على السيف ويطلق أيضًا على سيف عمر بن الخطاب رضي الله عنه ويطلق أيضًا على ما يلف به الكتف من القماش؟</span><br><span style="color:#ffb01a;">وشاح</span>',
+'<span style="color: #7585c1;">مثل عربي قديم يطلق على كل اثنين متوافقين؟</span><br><span style="color:#ffb01a;">وافق شن طبقه</span>',
+'<span style="color: #7585c1;">هي ما يتركه الشخص كأمانة عند الغير؟</span><br><span style="color:#ffb01a;">وديعة</span>',
+'<span style="color: #7585c1;">هي سلسلة أفعال متكررة تسير على نمط واحد؟</span><br><span style="color:#ffb01a;">وتيرة</span>',
+'<span style="color: #7585c1;">عكس الغدر؟</span><br><span style="color:#ffb01a;">وفاء</span>',
+'<span style="color: #7585c1;">هي خير من العلاج؟</span><br><span style="color:#ffb01a;">الوقاية</span>',
+'<span style="color: #7585c1;">حبس مال أو عقار لمنفعة أو خير؟</span><br><span style="color:#ffb01a;">وقف</span>',
+'<span style="color: #7585c1;">هي عملية نقل المنتجات من مصدر خارجي إلى داخل الدولة ؟</span><br><span style="color:#ffb01a;">واردات</span>',
+'<span style="color: #7585c1;">منصب سياسي حالي ورد ذكره في القرآن بموضعين؟</span><br><span style="color:#ffb01a;">وزير</span>',
+'<span style="color: #7585c1;">من القائل "هذا هو الناموس الذي كان ينزل على موسى وإن محمد لنبي هذه الأمة"؟</span><br><span style="color:#ffb01a;">ورقة بن نوفل</span>' 
+      ],
+
+ // حرف ي    
+    B2: [
+    '<span style="color: #7585c1;">قال رسول الله ﷺ: "ليس المسكين الذي ترده التمرة والتمرتان، ولا اللقمة واللقمتان، وإنما المسكين الذي ؟</span><br><span style="color:#ffb01a;">يتعفف</span>',
+'<span style="color: #7585c1;">سورة تسمى قلب القران ما هي؟</span><br><span style="color:#ffb01a;">يس</span>',
+'<span style="color: #7585c1;">كلمة تعنى قنط؟</span><br><span style="color:#ffb01a;">يأس</span>',
+'<span style="color: #7585c1;">كلمة جامعة لحروف الإدغام؟</span><br><span style="color:#ffb01a;">يرملون</span>',
+'<span style="color: #7585c1;">ما اسم الشهر السادس من التاريخ الميلادي؟</span><br><span style="color:#ffb01a;">يونيو</span>',
+'<span style="color: #7585c1;">فن شعبي إماراتي يقوم على الرقص بقطعة سلاح أو سيف والقائها في الجو ثم التقاطها؟</span><br><span style="color:#ffb01a;">اليولة</span>',
+'<span style="color: #7585c1;">اكمل "ما كل ما يعرف .."؟</span><br><span style="color:#ffb01a;">يقال</span>',
+'<span style="color: #7585c1;">من الأحجار الكريمة؟</span><br><span style="color:#ffb01a;">ياقوت</span>',
+'<span style="color: #7585c1;">من النبي الذي وصف في القران بأنه سيدًا وحصورًا؟</span><br><span style="color:#ffb01a;">يحيى</span>',
+'<span style="color: #7585c1;">اكمل "إذا أردت أن تطاع فأمر بما .."؟</span><br><span style="color:#ffb01a;">يستطاع</span>',
+'<span style="color: #7585c1;">اكمل "سمّن كلبك .."؟</span><br><span style="color:#ffb01a;">ياكلك</span>',
+'<span style="color: #7585c1;">قال رسول الله ﷺ: "المرء على دين خليله فلينظر أحدكم من .."؟</span><br><span style="color:#ffb01a;">يخالل</span>',
+'<span style="color: #7585c1;">هي مرحلة النمو التي تسبق التحول إلى فراشة؟</span><br><span style="color:#ffb01a;">يرقة</span>',
+'<span style="color: #7585c1;">هو نقيض النوم والغفلة؟</span><br><span style="color:#ffb01a;">اليقظة</span>',
+'<span style="color: #7585c1;">اكمل "الليل ما هو قصير الا على اللي .."؟</span><br><span style="color:#ffb01a;">ينامه</span>',
+'<span style="color: #7585c1;">مقبض كل شيء؟</span><br><span style="color:#ffb01a;">يد</span>',
+'<span style="color: #7585c1;">نوع من أنواع الزهور؟</span><br><span style="color:#ffb01a;">ياسمين</span>',
+'<span style="color: #7585c1;">العملة الأوروبية الموحدة؟</span><br><span style="color:#ffb01a;">يورو</span>',
+'<span style="color: #7585c1;">من هم قتلة الأنبياء والرسل؟</span><br><span style="color:#ffb01a;">اليهود</span>',
+'<span style="color: #7585c1;">أسرع الحشرات في العالم؟</span><br><span style="color:#ffb01a;">اليعسوب</span>',
+'<span style="color: #7585c1;">في الجزيرة العربية جمهورية واحدة فقط، فما اسمها؟</span><br><span style="color:#ffb01a;">اليمن</span>',
+'<span style="color: #7585c1;">ماهي بلاد الإغريق؟</span><br><span style="color:#ffb01a;">يونان</span>',
+'<span style="color: #7585c1;">عنصر فلزي مشع يستخدم في صناعة القنبلة الذرية ووقودًا للمفاعل النووي؟</span><br><span style="color:#ffb01a;">يورانيوم</span>',
+'<span style="color: #7585c1;">تسمى ملكة النحل بـ؟</span><br><span style="color:#ffb01a;">يعسوب</span>',
+'<span style="color: #7585c1;">في اللغة معناها يسافر ليلاً، ومنها سفر الرسول ﷺ من المسجد الحرام إلى المسجد الأقصى؟</span><br><span style="color:#ffb01a;">يسري</span>',
+'<span style="color: #7585c1;">فتى موسى الذي رافقه أثناء مقابلته الخضر؟</span><br><span style="color:#ffb01a;">يوشع بن نون</span>',
+'<span style="color: #7585c1;">تدفع المياه المستمرة أو المتقطعة من الأرض؟</span><br><span style="color:#ffb01a;">ينبوع</span>',
+'<span style="color: #7585c1;">من مفردات سورة يس لفظ بمعنى يسرع في مشيته؟</span><br><span style="color:#ffb01a;">يسعى</span>',
+'<span style="color: #7585c1;">حالة تسيطر على بعض الأشخاص بعد الفشل المتكرر؟</span><br><span style="color:#ffb01a;">يأس</span>',
+'<span style="color: #7585c1;">ما هي الشجرة التي أنبتها الله لسيدنا يونس بعد أن خرج من بطن الحوت؟</span><br><span style="color:#ffb01a;">اليقطين</span>',
+'<span style="color: #7585c1;">وحدة العملة اليابانية؟</span><br><span style="color:#ffb01a;">الين</span>',
+'<span style="color: #7585c1;">معركة شهيرة ايام حروب الردة وقعت بين جند الاسلام وعدو الله مسيلمة الكذاب قٌتل فيها هذا الكافر فما اسم هذه المعركة ؟</span><br><span style="color:#ffb01a;">اليمامة</span>',
+'<span style="color: #7585c1;">أمة كبيرة من الناس تنشر الفساد والدمار في الأرض، ظهورها من علامات الساعة؟</span><br><span style="color:#ffb01a;">يأجوج ومأجوج</span>',
+'<span style="color: #7585c1;">ما هى السورة التى زادت عن 100 آية ولم يذكر فيها الجنة ولا النار؟</span><br><span style="color:#ffb01a;">يوسف </span>',
+'<span style="color: #7585c1;">من الأمثال (عند الامتحان يكرم المرأ أو ..)؟</span><br><span style="color:#ffb01a;">يهان</span>',
+'<span style="color: #7585c1;">يوم للعرب المسلمين على الروم، كان في ١٣ من الهجرة، انهزم فيه الروم شر هزيمة وقتل قائد جيشهم وكان قائد جيوش المسلمين خالد بن الوليد رضي الله عنه، فما اسم ذلك اليوم؟</span><br><span style="color:#ffb01a;">اليرموك</span>'      
+      ],
+
+ // بدون حرف     
+    C2: [
+
+'<span style="color: #7585c1;">يقوم رجل بالتشهد 4 مرات في صلاة واحدة وصلاته تعتبر صحيحة، فما هي هذه الصلاة؟</span><br><span style="color:#ffb01a;">بدأ صلاة المغرب مع تشهد الركعة الثانية</span>',
+      ],
+    };
+  
+   
+    var askedQuestions = {};
+
+function getRandomQuestion(letter) {
+  var questionSet = questions[letter];
+
+  var unansweredQuestions = questionSet.filter(function (question) {
+    return !askedQuestions.hasOwnProperty(question);
+  });
+
+  // Check if all questions have been asked for the given letter
+  if (unansweredQuestions.length === 0) {
+    document.getElementById("question").innerHTML = "لا توجد اسئلة اضافية -لتكرار الأسئلة اعد تحميل الصفحة-";
+    return;
+  }
+
+  var randomQuestion = unansweredQuestions[Math.floor(Math.random() * unansweredQuestions.length)];
+
+  // Store the asked question
+  askedQuestions[randomQuestion] = true;
+
+  document.getElementById("question").innerHTML = randomQuestion;
+
+  const buttons = document.querySelectorAll('.button');
+
+  // Remove the 'button-clicked' class from all buttons
+  buttons.forEach(function (btn) {
+    btn.classList.remove('button-clicked');
+  });
+
+  // Add the 'button-clicked' class to the clicked button
+  document.querySelector(`button[data-letter="${letter}"]`).classList.add('button-clicked');
+}
+    
+  </script>
+  
+</body>
+</html>
