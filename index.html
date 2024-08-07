@@ -59,85 +59,6 @@
             color: #faf9f7; /* Ivory */
         }
 
-        .toggle-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .toggle-container label {
-            font-size: 1.2em;
-            margin-right: 10px;
-        }
-
-        .toggle-container .switch {
-            position: relative;
-            display: inline-block;
-            width: 200px; /* زيادة العرض */
-            height: 40px; /* زيادة الارتفاع */
-        }
-
-        .toggle-container .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .toggle-container .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 20px; /* زيادة الانحناء */
-            display: flex;
-            align-items: center;
-            justify-content: center; /* توسيط النصوص */
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-
-        .toggle-container .slider:before {
-            position: absolute;
-            content: "";
-            height: 30px;
-            width: 30px;
-            border-radius: 50%;
-            left: 5px;
-            bottom: 5px;
-            background-color: white;
-            transition: .4s;
-        }
-
-        input:checked + .slider {
-            background-color: #4D6772; /* Charcoal */
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(160px); /* تحريك اللمبة لليمين */
-        }
-
-        .toggle-container .slider .text {
-            color: #fff;
-            font-size: 0.8em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            width: 100%;
-            text-align: center;
-        }
-
-        input:checked + .slider .text.show {
-            display: flex;
-        }
-
-        input:not(:checked) + .slider .text.hide {
-            display: flex;
-        }
-
         .question-area {
             text-align: center;
             min-height: 100px;
@@ -196,12 +117,92 @@
             background-color: #9CA0A1; /* Gray */
         }
 
+        .toggle-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-container .switch {
+            position: relative;
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+        }
+
+        .toggle-container .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-container .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .toggle-container .slider:before {
+            position: absolute;
+            content: "";
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            left: 5px;
+            bottom: 5px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #4D6772; /* Charcoal */
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(160px);
+        }
+
+        .toggle-container .slider .text {
+            color: #fff;
+            font-size: 0.8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+
+        input:checked + .slider .text.show {
+            display: flex;
+        }
+
+        input:not(:checked) + .slider .text.hide {
+            display: flex;
+        }
+
+        input:checked + .slider .text.hide,
+        input:not(:checked) + .slider .text.show {
+            display: none;
+        }
+
         @media (min-width: 600px) {
             select, button {
                 width: auto;
                 font-size: 1.2em;
             }
         }
+
         @media (max-width: 800px) {
             .letter {
                 margin: 2px;
@@ -209,11 +210,13 @@
                 height: 50px;
             }
         }
+
         @media (max-width: 800px) {
             footer {
                 font-size: 70%;
             }
         }
+
         @media (max-width: 800px) {
             .question-area {
                 font-size: 98%;
@@ -256,16 +259,15 @@
             <div class="letter" onclick="selectLetter('هـ', this)">هـ</div>
             <div class="letter" onclick="selectLetter('و', this)">و</div>
             <div class="letter" onclick="selectLetter('ي', this)">ي</div>
-            <div class="letter" onclick="selectLetter('الغاز', this)">ألغاز </div>
-
+            <div class="letter" onclick="selectLetter('الغاز', this)">الغاز</div>
         </div>
 
         <div class="toggle-container">
-            <label for="toggle-answer" class="switch">
-                <input type="checkbox" id="toggle-answer" onchange="updateAnswerVisibility()">
+            <label class="switch">
+                <input type="checkbox" id="toggle-answer" onclick="updateQuestionVisibility()">
                 <span class="slider">
-                    <span class="text hide">إظهار الاجابات ؟</span>
-                    <span class="text show" style="display: none;">إخفاء الاجابات ؟</span>
+                    <span class="text show">إظهار الإجابات</span>
+                    <span class="text hide">إخفاء الإجابات</span>
                 </span>
             </label>
         </div>
@@ -275,12 +277,12 @@
         </div>
 
         <footer>
-            <p>" تم جمع المعلومات باجتهاد من الانترنت ، فإن اصبنا فمن الله وان اخطأنا فمن انفسنا والشيطان "</p>
+            <p>"تم جمع المعلومات باجتهاد من الانترنت، فإن اصبنا فمن الله وان اخطأنا فمن انفسنا"</p>
         </footer>
     </div>
 
     <script>
-        const questions = {
+         const questions = {
             "أ":[
     { "question": "اين يوجد اكبر عدد من البراكين في العالم؟", "answer": "إندونيسيا" },
     { "question": "من هو امير الشعراء؟", "answer": "أحمد شوقي" },
@@ -1411,92 +1413,74 @@
     { "question": "في سباق بين عشر متسابقين بطيئين بس مافيه ولا واحد فاز الثاني ؟ مين فاز؟", "answer": "الثاني" }
 ]
 
+
             // أضف المزيد من الأسئلة للأحرف الأخرى هنا
         };
 
-        let currentLetter = '';
-        let showAnswer = false;
+        let currentLetter = "";
         let displayedQuestions = {};
+        let showAnswer = false;
 
         function selectLetter(letter, element) {
             currentLetter = letter;
+            if (!displayedQuestions[currentLetter]) {
+                displayedQuestions[currentLetter] = [];
+            }
             document.querySelectorAll('.letter').forEach(el => el.classList.remove('selected'));
             element.classList.add('selected');
-            displayQuestion(); // عرض السؤال الجديد
+            displayQuestion();
         }
 
-        function updateAnswerVisibility() {
+        function updateQuestionVisibility() {
             showAnswer = document.getElementById('toggle-answer').checked;
-            if (currentLetter) {
-                updateQuestionVisibility(); // فقط تحديث حالة الإجابة للسؤال الحالي
-            }
-            updateSliderText(); // تحديث النصوص في السويتش
-        }
-
-        function updateSliderText() {
-            const slider = document.querySelector('.slider');
-            const texts = slider.querySelectorAll('.text');
-            if (showAnswer) {
-                texts[0].style.display = 'none';
-                texts[1].style.display = 'flex'; // تغيير إلى flex لتوسيع العرض
-            } else {
-                texts[0].style.display = 'flex'; // تغيير إلى flex لتوسيع العرض
-                texts[1].style.display = 'none';
-            }
+            let answerDivs = document.querySelectorAll('#question-container .answer');
+            let answerButtons = document.querySelectorAll('#question-container .answer-btn');
+            answerDivs.forEach(answerDiv => {
+                answerDiv.style.display = showAnswer ? 'block' : 'none';
+            });
+            answerButtons.forEach(button => {
+                button.textContent = showAnswer ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+            });
         }
 
         function displayQuestion() {
-            const questionContainer = document.getElementById('question-container');
-            if (currentLetter) {
-                const questionsList = questions[currentLetter];
-                if (questionsList) {
-                    const questionIndex = displayedQuestions[currentLetter] || 0;
-                    const question = questionsList[questionIndex];
-                    
-                    if (question) {
-                        displayedQuestions[currentLetter] = (questionIndex + 1) % questionsList.length;
-                        const showAnswer = document.getElementById('toggle-answer').checked;
-                        questionContainer.innerHTML = `
+            let questionContainer = document.getElementById('question-container');
+            if (currentLetter && questions[currentLetter]) {
+                let remainingQuestions = questions[currentLetter].filter(q => !displayedQuestions[currentLetter].includes(q.question));
+                if (remainingQuestions.length > 0) {
+                    let randomIndex = Math.floor(Math.random() * remainingQuestions.length);
+                    let question = remainingQuestions[randomIndex];
+                    displayedQuestions[currentLetter].push(question.question);
+                    questionContainer.innerHTML = `
                         <div class="selected-letter">الإجابة بحرف ${currentLetter}</div>
-                            <p>${question.question}</p>
-                            <div class="answer" style="display: ${showAnswer ? 'block' : 'none'}">${question.answer}</div>
-                            <button class="answer-btn" onclick="toggleAnswer(this, this.previousElementSibling)">
-                                ${showAnswer ? 'إخفاء الإجابة' : 'إظهار الإجابة'}
-                            </button>
-                        `;
-                    } else {
-                        questionContainer.innerHTML = `<p>لا توجد أسئلة إضافية</p><p>-لتكرار الأسئلة اعد تحميل الصفحة-</p>`;
-                    }
+                        <p>${question.question}</p>
+                        <div class="answer">
+                            <p>${question.answer}</p>
+                        </div>
+                        <button class="answer-btn" onclick="toggleAnswer(this, this.previousElementSibling)">إظهار الإجابة</button>
+                    `;
+                    updateQuestionVisibility(); // تحديث عرض الإجابات بناءً على حالة السويتش
                 } else {
-                    questionContainer.innerHTML = `<p class="initial-message">اختر حرف ليظهر السؤال!</p>`;
+                    questionContainer.innerHTML = `<p>لا توجد أسئلة إضافية</p><p>-لتكرار الأسئلة اعد تحميل الصفحة-</p>`;
                 }
             } else {
                 questionContainer.innerHTML = `<p class="initial-message">اختر حرف ليظهر السؤال!</p>`;
             }
         }
 
-        function toggleAnswer(button, answerDiv) {
-            if (answerDiv.style.display === "none") {
-                answerDiv.style.display = "block";
+        function toggleAnswer(button, answerContainer) {
+            if (answerContainer.style.display === "none") {
+                answerContainer.style.display = "block";
                 button.textContent = "إخفاء الإجابة";
             } else {
-                answerDiv.style.display = "none";
+                answerContainer.style.display = "none";
                 button.textContent = "إظهار الإجابة";
-            }
-        }
-
-        function updateQuestionVisibility() {
-            let answerDiv = document.querySelector('#question-container .answer');
-            let answerButton = document.querySelector('#question-container .answer-btn');
-            if (answerDiv) {
-                answerDiv.style.display = showAnswer ? 'block' : 'none';
-                answerButton.textContent = showAnswer ? 'إخفاء الإجابة' : 'إظهار الإجابة';
             }
         }
 
         // Initialize with default switch state
         document.addEventListener('DOMContentLoaded', function () {
-            updateSliderText(); // تحديث النصوص في السويتش عند تحميل الصفحة
+            updateQuestionVisibility(); // تحديث النصوص في السويتش عند تحميل الصفحة
         });
     </script>
 </body>
